@@ -166,11 +166,3 @@ Create table [Shedule]
 	Constraint [Unique_Values_Shedule] Unique ([In_Department_id], [Date], [Time_start]),
 )
 Go
-
-
-
-
-
-
-
-
