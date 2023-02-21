@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example-API-Dapper", "Example-API-Dapper.csproj", "{86C5A243-2BEA-4372-94C1-69D4AE38C29E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper-Data-Access-Layer", "..\Dapper-Data-Access-Layer\Dapper-Data-Access-Layer.csproj", "{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{86C5A243-2BEA-4372-94C1-69D4AE38C29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86C5A243-2BEA-4372-94C1-69D4AE38C29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86C5A243-2BEA-4372-94C1-69D4AE38C29E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

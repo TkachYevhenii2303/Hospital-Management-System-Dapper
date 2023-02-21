@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Tuzj2A2JjuyaCt1ONxO/uRvkhfq3FlDs4zyAggFoCDYPZTq+JtgQcLQn+WkqTnRbrb5e0CV8mOnATATT0aioIQ==",
+  "success": true,
+  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET + MVC and Blazor\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
