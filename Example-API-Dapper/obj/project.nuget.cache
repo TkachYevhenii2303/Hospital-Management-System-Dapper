@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "/Ss9wJfEIyFLkERjpJ0Q7LluCOteh2y26J3CPgUqdw2YHYsepsLuC4s4FgrYqJv1RA9z2DLihb9foAPfwTF3Ww==",
+  "success": true,
+  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET + MVC and Blazor\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\Example-API-Dapper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
