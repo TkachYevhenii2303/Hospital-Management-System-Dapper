@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
 {
-    public interface IGenericRepository
+    public interface IGenericRepository<T>
     {
 
     }

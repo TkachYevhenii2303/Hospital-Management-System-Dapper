@@ -8,7 +8,7 @@ using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
-    public class GenericRepository : IGenericRepository
+    public class GenericRepository<T> : IGenericRepository<T> where T: class
     {
         private readonly DapperContext _context;
         public GenericRepository(DapperContext context) => _context = context;
