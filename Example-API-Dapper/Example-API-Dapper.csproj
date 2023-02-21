@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dapper-Data-Access-Layer\Dapper-Data-Access-Layer.csproj" />
+  </ItemGroup>
+
 </Project>
