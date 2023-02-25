@@ -10,14 +10,28 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly IDbTransaction transaction;
+        private readonly IDbTransaction _transaction;
+        public UnitOfWork(IDbTransaction transaction)
+        {
+            _transaction = transaction;
+        }
         public void Commit()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _transaction.Commit();
+            }
+            catch (Exception e)
+            {
+                _transaction.Rollback();
+                Console.WriteLine(e.Message);
+            }
         }
         public void Dispose()
         {
-            transaction?.Connection.Close();
+            _transaction?.Connection?.Close();
+            _transaction?.Connection?.Dispose();
+            _transaction?.Dispose();
         }
     }
 }
