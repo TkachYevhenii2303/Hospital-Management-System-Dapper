@@ -13,5 +13,8 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
         public Task<IEnumerable<Clinic>> GetCompanies();
         public Task<Clinic> GetCompany(int id);
         public Task<Clinic> CreateCompany (CompanyForCreationDto company);
+        public Task UpdateCompany (int id, CompanyForCreationDto company);
+        public Task DeleteCompany(int id);
+        public Task<Clinic> CompanyDepartmentId (int id);
     }
 }

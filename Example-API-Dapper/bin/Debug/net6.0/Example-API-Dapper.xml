@@ -26,5 +26,27 @@
             <param name="company"></param>
             <returns></returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.UpdateCompany(System.Int32,Dapper_Example_Bussines_Logic.Dto.CompanyForCreationDto)">
+            <summary>
+            Update the concrete Clinic by Id
+            </summary>
+            <param name="id"></param>
+            <param name="company"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.DeleteCompany(System.Int32)">
+            <summary>
+            Delete some clinic by Id 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.CompanyDepartmentId(System.Int32)">
+            <summary>
+            Find Clinic by Department ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

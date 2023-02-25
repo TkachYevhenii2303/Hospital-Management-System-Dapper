@@ -191,3 +191,9 @@ Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (9, 1, 
 Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (10, 5, N'Transplant Center');
 
 Set Identity_Insert dbo.Department off
+
+Set ansi_nulls on
+Go
+
+Set quoted_identifier on
+Go

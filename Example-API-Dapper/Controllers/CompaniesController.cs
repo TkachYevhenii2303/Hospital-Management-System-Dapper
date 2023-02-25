@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Example_API_Dapper.Controllers
 {
-    [Route("api/{controller}")]
+    [Route("api/companies")]
     [ApiController]
     public class CompaniesController : ControllerBase
     {
@@ -68,6 +68,72 @@ namespace Example_API_Dapper.Controllers
             {
                 var createdCompany = await _companyRepository.CreateCompany(company);
                 return CreatedAtRoute("Company-By-Id", new { id = createdCompany.Id }, createdCompany);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Update the concrete Clinic by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="company"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateCompany(int id, CompanyForCreationDto company)
+        {
+            try
+            {
+                var dbCompany = await _companyRepository.GetCompany(id);
+                if (dbCompany == null)
+                    return NotFound();
+                await _companyRepository.UpdateCompany(id, company);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Delete some clinic by Id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCompany(int id)
+        {
+            try
+            {
+                var dbCompany = await _companyRepository.GetCompany(id);
+                if (dbCompany == null)
+                    return NotFound();
+                await _companyRepository.DeleteCompany(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Find Clinic by Department ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("Department/{id}")]
+        public async Task<IActionResult> CompanyDepartmentId(int id)
+        {
+            try
+            {
+                var companies = await _companyRepository.CompanyDepartmentId(id);
+                if (companies == null)
+                    return NotFound();
+                return Ok(companies);
             }
             catch (Exception ex)
             {

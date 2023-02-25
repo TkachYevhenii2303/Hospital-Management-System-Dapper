@@ -63,5 +63,46 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
                 return createdCompany;
             }
         }
+
+        public async Task UpdateCompany(int id, CompanyForCreationDto company)
+        {
+            var query = "Update Clinic SET Clinic_name = @Clinic_name, Address = @Address, Details = @Details WHERE Id = @Id";
+
+            var parameters = new DynamicParameters();
+            parameters.Add("Id", id, DbType.Int32);
+            parameters.Add("Clinic_name", company.Clinic_name, DbType.String);
+            parameters.Add("Address", company.Address, DbType.String);
+            parameters.Add("Details", company.Details, DbType.String);
+
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, parameters);
+            }
+        }
+
+        public async Task DeleteCompany(int id)
+        {
+            var query = "Delete From Clinic Where Id = @Id";
+
+            using (var connection = _context.CreateConnection())
+            {
+                await connection.ExecuteAsync(query, new {id});
+            }
+        }
+
+        public async Task<Clinic> CompanyDepartmentId(int id)
+        {
+            var procedureName = "Show_Company_and_Departments";
+            var parameters = new DynamicParameters();
+            parameters.Add("Id", id, DbType.Int32, ParameterDirection.Input);
+
+            using (var connection = _context.CreateConnection())
+            {
+                var companies = await connection.QueryFirstOrDefaultAsync<Clinic>(procedureName, parameters,
+                    commandType: CommandType.StoredProcedure);
+
+                return companies;
+            }
+        }
     }
 }
