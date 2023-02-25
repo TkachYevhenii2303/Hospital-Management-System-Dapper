@@ -8,6 +8,6 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
 {
     public interface IGenericRepository<T>
     {
-
+        public Task<IEnumerable<T>> Get_Information();
     }
 }
