@@ -166,3 +166,28 @@ Create table [Shedule]
 	Constraint [Unique_Values_Shedule] Unique ([In_Department_id], [Date], [Time_start]),
 )
 Go
+
+Set Identity_Insert dbo.Clinic on
+
+Insert into dbo.Clinic ([Id], [Clinic_name], [Address], [Details]) Values (1, N'Chicago Medical Center', N'3650 W Armitage Ave, Chicago, IL 60647 USA', N'An urgent care facility in Chicago, Illinois');
+Insert into dbo.Clinic ([Id], [Clinic_name], [Address], [Details]) Values (2, N'U.S.A. Medical Monitoring Service, LLC', N'14000 S Military Trail, Delray Beach, FL 33484', N'957 Patient Access Representative jobs available in Delray Beach');
+Insert into dbo.Clinic ([Id], [Clinic_name], [Address], [Details]) Values (3, N'Pak American Clinic', N'3939 Hollywood Blvd suite 2-b, Hollywood, FL 33021', N'In association with the State of Florida, we provide free medical care to patients as allowed by the State and Volunteer Services at the Broward Board of Health.');
+Insert into dbo.Clinic ([Id], [Clinic_name], [Address], [Details]) Values (4, N'America Health Care Inc', N'8347 NW 36th St, Doral, FL 33166', N'Management has been kind of rocky at Sky-Box since I started the management');
+Insert into dbo.Clinic ([Id], [Clinic_name], [Address], [Details]) Values (5, N'American Clinical Services', N'210 East 86th St, New York, NY 10028, IL 60647 USA', NULL);
+
+Set Identity_Insert dbo.Clinic off
+
+Set Identity_Insert dbo.Department on
+
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (1, 1, N'Aerospace Medicine');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (2, 2, N'Brain Tumor Program');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (3, 1, N'Childrens Center');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (4, 3, N'Dental Specialties');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (5, 4, N'Emergency Medicine');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (6, 5, N'Executive Health Program');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (7, 2, N'Family Medicine');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (8, 3, N'Sleep Medicine');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (9, 1, N'Sports Medicine');
+Insert into dbo.Department ([Id], [Clinic_id], [Department_name]) Values (10, 5, N'Transplant Center');
+
+Set Identity_Insert dbo.Department off

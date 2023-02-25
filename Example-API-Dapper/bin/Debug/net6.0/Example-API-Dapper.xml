@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Example-API-Dapper</name>
+    </assembly>
+    <members>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.GetCompanies">
+            <summary>
+            Returns the list of Companies 
+            </summary>
+            <returns>The list of Companies</returns>
+            <remarks>Simple Request - Get: /api/companies</remarks>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.GetCompany(System.Int32)">
+            <summary>
+            Return the company by ID
+            </summary>
+            <param name="id">Parameter for the Request</param>
+            <returns>The company by id</returns>
+            <remarks>The Request with the parameter</remarks>
+        </member>
+    </members>
+</doc>
