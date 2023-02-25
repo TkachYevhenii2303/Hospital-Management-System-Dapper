@@ -872,6 +872,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Dapper": "2.0.123",
           "Microsoft.Data.SqlClient": "5.1.0",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"

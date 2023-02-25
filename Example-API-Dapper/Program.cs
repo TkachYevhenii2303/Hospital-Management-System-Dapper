@@ -22,7 +22,7 @@ builder.Services.AddScoped<IDbTransaction>(s =>
 builder.Services.AddSingleton<DapperContext>();
 
 
-// Dependency  Injections 
+// Dependency Injections 
 
 
 var app = builder.Build();
