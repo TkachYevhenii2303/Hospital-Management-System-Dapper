@@ -713,12 +713,18 @@
       "Dapper-Data-Access-Layer/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.123",
+          "Dapper-Example-Bussines-Logic": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.0",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
           "Dapper-Data-Access-Layer.dll": {}
+        }
+      },
+      "Dapper-Example-Bussines-Logic/1.0.0": {
+        "runtime": {
+          "Dapper-Example-Bussines-Logic.dll": {}
         }
       }
     }
@@ -1206,6 +1212,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Dapper-Data-Access-Layer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dapper-Example-Bussines-Logic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

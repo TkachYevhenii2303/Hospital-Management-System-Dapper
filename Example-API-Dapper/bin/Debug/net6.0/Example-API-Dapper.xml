@@ -19,5 +19,12 @@
             <returns>The company by id</returns>
             <remarks>The Request with the parameter</remarks>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.CreateCompany(Dapper_Example_Bussines_Logic.Dto.CompanyForCreationDto)">
+            <summary>
+            Created the new Company for the Database
+            </summary>
+            <param name="company"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -14,4 +14,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dapper-Example-Bussines-Logic\Dapper-Example-Bussines-Logic.csproj" />
+  </ItemGroup>
+
 </Project>

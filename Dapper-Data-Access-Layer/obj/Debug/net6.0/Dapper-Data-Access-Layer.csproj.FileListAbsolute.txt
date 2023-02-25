@@ -10,3 +10,6 @@ D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET C
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Dapper-Data-Access-Layer\obj\Debug\net6.0\refint\Dapper-Data-Access-Layer.dll
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Dapper-Data-Access-Layer\obj\Debug\net6.0\Dapper-Data-Access-Layer.pdb
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Dapper-Data-Access-Layer\obj\Debug\net6.0\ref\Dapper-Data-Access-Layer.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Dapper-Data-Access-Layer\bin\Debug\net6.0\Dapper-Example-Bussines-Logic.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Dapper-Data-Access-Layer\bin\Debug\net6.0\Dapper-Example-Bussines-Logic.pdb
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Dapper-Data-Access-Layer\obj\Debug\net6.0\Dapper-Data-Access-Layer.csproj.CopyComplete

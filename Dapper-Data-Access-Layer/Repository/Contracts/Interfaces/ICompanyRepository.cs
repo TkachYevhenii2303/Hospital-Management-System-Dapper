@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper_Data_Access_Layer.Entities;
+using Dapper_Example_Bussines_Logic.Dto;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
 {
@@ -11,5 +12,6 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
     {
         public Task<IEnumerable<Clinic>> GetCompanies();
         public Task<Clinic> GetCompany(int id);
+        public Task<Clinic> CreateCompany (CompanyForCreationDto company);
     }
 }

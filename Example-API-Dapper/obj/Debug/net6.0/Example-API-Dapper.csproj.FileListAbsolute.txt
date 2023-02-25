@@ -96,3 +96,5 @@ D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET C
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\Example-API-Dapper.xml
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.xml
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\Dapper-Example-Bussines-Logic.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\Dapper-Example-Bussines-Logic.pdb

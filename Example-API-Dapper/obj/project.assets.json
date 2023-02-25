@@ -1184,6 +1184,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Dapper": "2.0.123",
+          "Dapper-Example-Bussines-Logic": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.0",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
@@ -1193,6 +1194,16 @@
         },
         "runtime": {
           "bin/placeholder/Dapper-Data-Access-Layer.dll": {}
+        }
+      },
+      "Dapper-Example-Bussines-Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Dapper-Example-Bussines-Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Dapper-Example-Bussines-Logic.dll": {}
         }
       }
     }
@@ -3401,6 +3412,11 @@
       "type": "project",
       "path": "../Dapper-Data-Access-Layer/Dapper-Data-Access-Layer.csproj",
       "msbuildProject": "../Dapper-Data-Access-Layer/Dapper-Data-Access-Layer.csproj"
+    },
+    "Dapper-Example-Bussines-Logic/1.0.0": {
+      "type": "project",
+      "path": "../Dapper-Example-Bussines-Logic/Dapper-Example-Bussines-Logic.csproj",
+      "msbuildProject": "../Dapper-Example-Bussines-Logic/Dapper-Example-Bussines-Logic.csproj"
     }
   },
   "projectFileDependencyGroups": {

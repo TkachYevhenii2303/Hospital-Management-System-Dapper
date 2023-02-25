@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
+using Dapper_Example_Bussines_Logic.Dto;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 
@@ -55,5 +56,23 @@ namespace Example_API_Dapper.Controllers
             }
         }
 
+        /// <summary>
+        /// Created the new Company for the Database
+        /// </summary>
+        /// <param name="company"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> CreateCompany(CompanyForCreationDto company)
+        {
+            try
+            {
+                var createdCompany = await _companyRepository.CreateCompany(company);
+                return CreatedAtRoute("Company-By-Id", new { id = createdCompany.Id }, createdCompany);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }
