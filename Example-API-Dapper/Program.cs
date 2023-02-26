@@ -1,6 +1,7 @@
 using System.Data;
 using System.Reflection;
 using Dapper_Data_Access_Layer.Context;
+using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Microsoft.Data.SqlClient;

@@ -18,6 +18,11 @@ namespace Example_API_Dapper.Controllers
             _employeesRepository = employeesRepository;
         }
 
+        /// <summary>
+        /// Get_all_Employees_By_Specialization
+        /// </summary>
+        /// <param name="specialization"></param>
+        /// <returns></returns>
         [HttpGet("{Specialization}", Name = "Specialization_Employees")]
         public async Task<IActionResult> Get_all_Employees_By_Specialization(string specialization)
         {

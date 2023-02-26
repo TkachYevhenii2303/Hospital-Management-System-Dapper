@@ -19,7 +19,7 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
 
         public async Task<IEnumerable<Employees>> Get_all_activity_Employees()
         {
-            string query = "Select * From [dbo].Employees Where [Active_is] = 1";
+            string query = "Select * From [dbo].Employees Where Active_is = 1";
             IEnumerable<Employees> result = await _connection.QueryAsync<Employees>(query, transaction: _transaction);
             return result;
         }
