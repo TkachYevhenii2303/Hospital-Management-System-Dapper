@@ -197,3 +197,11 @@ Go
 
 Set quoted_identifier on
 Go
+
+Create procedure dbo.[Show_Company_and_Departments] @id int
+as 
+Select c.Clinic_name, c.Address
+From Clinic c Join Department d on c.Id = d.Clinic_id
+Where c.Id = @id
+
+Go

@@ -140,5 +140,23 @@ namespace Example_API_Dapper.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        /// <summary>
+        /// Get all clinic with Department using Multi Mapping
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("MultiMapping")]
+        public async Task<IActionResult> GetCompaniesMultiMapping()
+        {
+            try
+            {
+                var company = await _companyRepository.GetCompaniesMultiMapping();
+                return Ok(company);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

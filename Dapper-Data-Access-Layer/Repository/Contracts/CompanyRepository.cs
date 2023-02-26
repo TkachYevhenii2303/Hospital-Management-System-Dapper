@@ -104,5 +104,32 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
                 return companies;
             }
         }
+
+        public async Task<List<Clinic>> GetCompaniesMultiMapping()
+        {
+            var query = "Select * From Clinic c Join Department d on c.Id = d.Clinic_id";
+
+            using (var connection = _context.CreateConnection())
+            {
+                var companyDictionary = new Dictionary<int, Clinic>();
+
+                var companies = await connection.QueryAsync<Clinic, Department, Clinic>
+                (
+                    query, (company, department) =>
+                    {
+                        if (!companyDictionary.TryGetValue(company.Id, out var currentCompany))
+                        {
+                            currentCompany = company;
+                            companyDictionary.Add(currentCompany.Id, currentCompany);
+                        }
+
+                        currentCompany.Departments.Add(department);
+                        return currentCompany;
+                    }
+                );
+
+                return companies.Distinct().ToList();
+            }
+        }
     }
 }

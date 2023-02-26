@@ -48,5 +48,11 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.GetCompaniesMultiMapping">
+            <summary>
+            Get all clinic with Department using Multi Mapping
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
