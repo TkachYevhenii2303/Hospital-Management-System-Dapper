@@ -131,5 +131,29 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
                 return companies.Distinct().ToList();
             }
         }
+
+        public  async Task CreateMultipleCompanies(List<CompanyForCreationDto> companies)
+        {
+            var query = "Insert into Clinic (Clinic_name, Address, Details) Values (@Clinic_name, @Address, @Details)";
+            using (var connection = _context.CreateConnection())
+            {
+                connection.Open();
+
+                using (var transaction = connection.BeginTransaction())
+                {
+                    foreach (var company in companies)
+                    {
+                        var parameters = new DynamicParameters();
+                        parameters.Add("Clinic_name", company.Clinic_name, DbType.String);
+                        parameters.Add("Address", company.Address, DbType.String);
+                        parameters.Add("Details", company.Details, DbType.String);
+
+                        await connection.ExecuteAsync(query, parameters, transaction: transaction);
+                    }
+
+                    transaction.Commit();
+                }
+            }
+        }
     }
 }

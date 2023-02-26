@@ -17,5 +17,6 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
         public Task DeleteCompany(int id);
         public Task<Clinic> CompanyDepartmentId (int id);
         public Task<List<Clinic>> GetCompaniesMultiMapping();
-    }
+        public Task CreateMultipleCompanies(List<CompanyForCreationDto> companies);
+    } 
 }

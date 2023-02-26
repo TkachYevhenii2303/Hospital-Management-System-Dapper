@@ -158,5 +158,19 @@ namespace Example_API_Dapper.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpPost("Multiple")]
+        public async Task<IActionResult> CreateCompany(List<CompanyForCreationDto> companies)
+        {
+            try
+            {
+                await _companyRepository.CreateMultipleCompanies(companies);
+                return StatusCode(201);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }
