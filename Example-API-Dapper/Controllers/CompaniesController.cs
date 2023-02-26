@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Example_API_Dapper.Controllers
 {
-    [Route("api/companies")]
     [ApiController]
+    [Route("api/companies")]
     public class CompaniesController : ControllerBase
     {
         private readonly ICompanyRepository _companyRepository;
@@ -32,7 +32,7 @@ namespace Example_API_Dapper.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
         /// <summary>
@@ -47,12 +47,15 @@ namespace Example_API_Dapper.Controllers
             try
             {
                 var company = await _companyRepository.GetCompany(id);
-                if (company.Equals(null)) return NotFound();
+                if (company == null)
+                {
+                    return NotFound();
+                }
                 return Ok(company);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -71,7 +74,7 @@ namespace Example_API_Dapper.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -88,13 +91,16 @@ namespace Example_API_Dapper.Controllers
             {
                 var dbCompany = await _companyRepository.GetCompany(id);
                 if (dbCompany == null)
+                {
                     return NotFound();
+                }
+
                 await _companyRepository.UpdateCompany(id, company);
                 return NoContent();
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -110,13 +116,16 @@ namespace Example_API_Dapper.Controllers
             {
                 var dbCompany = await _companyRepository.GetCompany(id);
                 if (dbCompany == null)
+                {
                     return NotFound();
+                }
+
                 await _companyRepository.DeleteCompany(id);
                 return NoContent();
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -132,12 +141,15 @@ namespace Example_API_Dapper.Controllers
             {
                 var companies = await _companyRepository.CompanyDepartmentId(id);
                 if (companies == null)
+                {
                     return NotFound();
+                }
+
                 return Ok(companies);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -155,7 +167,7 @@ namespace Example_API_Dapper.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
@@ -165,11 +177,11 @@ namespace Example_API_Dapper.Controllers
             try
             {
                 await _companyRepository.CreateMultipleCompanies(companies);
-                return StatusCode(201);
+                return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
     }

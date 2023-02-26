@@ -54,5 +54,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.DepartmentController.Get_all_Information">
+            <summary>
+            Get all Information about Departments
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

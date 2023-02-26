@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepository<TEntity>
     {
-        public Task<IEnumerable<T>> Get_all_Information();
+        public Task<IEnumerable<TEntity>> Get_all_Information();
+        public Task<TEntity> Get_by_Id(int id);
     }
 }

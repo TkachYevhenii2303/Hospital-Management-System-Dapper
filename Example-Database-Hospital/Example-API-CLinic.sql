@@ -205,3 +205,74 @@ From Clinic c Join Department d on c.Id = d.Clinic_id
 Where c.Id = @id
 
 Go
+
+
+Set Identity_Insert dbo.Role on
+Insert into dbo.Role ([Id], [Role_name]) Values (1, N'General Practitioner (GP)');
+Insert into dbo.Role ([Id], [Role_name]) Values (2, N'Surgeon');
+Insert into dbo.Role ([Id], [Role_name]) Values (3, N'Specialist');
+Insert into dbo.Role ([Id], [Role_name]) Values (4, N'Hospitalist');
+Insert into dbo.Role ([Id], [Role_name]) Values (5, N'Emergency Medicine Physician');
+Set Identity_Insert dbo.Role off
+
+Set Identity_Insert dbo.Employees on
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (1, N'John', N'Smith', N'jsmith', N'jsmith@example.com', N'password123', N'555-555-5555', 'N555-555-1212', 1);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (2, N'Jane', 'Doe', 'jdoe', 'jdoe@example.com', 'password456', '555-123-4567', '555-987-6543', 1);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (3, N'Michael', 'Johnson', 'mjohnson', 'mjohnson@example.com', 'abc123', '555-867-5309', '555-555-5555', 1);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (4, N'Sarah', 'Lee', 'slee', 'slee@example.com', 'qwerty123', '555-555-1212', '555-123-4567', 0);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (5, N'William', 'Brown', 'wbrown', 'wbrown@example.com', 'password789', '555-987-6543', '555-555-1212', 0);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (6, N'Elizabeth', 'Davis', 'edavis', 'edavis@example.com', '12345678', '555-555-5555', '555-123-4567', 0);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (7, N'Christopher', 'Wilson', 'cwilson', 'cwilson@example.com', 'pass1234', '555-123-4567', '555-555-5555', 1);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (8, N'Ashley', 'Anderson', 'aanderson', 'aanderson@example.com', '98765432', '555-555-1212', '555-987-6543', 0);
+
+Insert into dbo.Employees([Id], [First_name], [Last_name], [User_name], [Email], [Password], [Mobile_number], [Phone_number], [Active_is]) 
+Values (9, N'David', N'Taylor', N'dtaylor', N'dtaylor@example.com', N'letmein123', N'555-867-5309', N'555-555-1212', 1);
+Set Identity_Insert dbo.Employees off
+
+Set Identity_Insert dbo.Has_Role on
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (1, 1, 2, 0, '2020-12-01', NULL);
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (2, 2, 1, 1, '2021-12-01', NULL);
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (3, 3, 1, 1, '2020-10-01', NULL);
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (4, 4, 3, 1, '2020-05-20', NULL);
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (5, 5, 4, 0, '2020-12-01', '2022-11-10');
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (6, 6, 4, 1, '2020-12-01', NULL);
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (7, 7, 5, 0, '2020-12-01', '2022-11-10');
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (8, 8, 2, 1, '2020-12-01', '2022-11-10');
+
+Insert into dbo.Has_Role ([Id], [Employees_id], [Role_id], [Active_is], [Time_from], [Time_to]) 
+Values (9, 9, 1, 1, '2020-12-01', '2022-11-10');
+
+Set Identity_Insert dbo.Has_Role off 
+
+
