@@ -34,7 +34,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         {
             string query = $"Select * From {title_table} Where Id = @id";
             var result =
-                await _connection.QueryFirstOrDefaultAsync(query, param: new { id }, transaction: _transaction);
+                await _connection.QueryFirstOrDefaultAsync<TEntity>(query, param: new { id }, transaction: _transaction);
 
             if (result == null)
             {

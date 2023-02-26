@@ -12,7 +12,7 @@ namespace Example_API_Dapper.Controllers
     [ApiController]
     public class DepartmentController : ControllerBase
     {
-        private IDepartmentRepository _DepartmentRepository;
+        private readonly IDepartmentRepository _DepartmentRepository;
         public DepartmentController(IDepartmentRepository departmentRepository) => _DepartmentRepository = departmentRepository;
 
         /// <summary>
@@ -47,13 +47,17 @@ namespace Example_API_Dapper.Controllers
             }
         }
 
-        [HttpGet("Department-By-Id")]
+        [HttpGet("{id}", Name = "Department-ID")]
         public async Task<IActionResult> Get_by_Id(int id)
         {
             try
             {
-                var departmetn = await _DepartmentRepository.Get_by_Id(id);
-                return Ok(departmetn);
+                var department = await _DepartmentRepository.Get_by_Id(id);
+                if (department == null)
+                {
+                    return NotFound();
+                }
+                return Ok(department);
             }
             catch (Exception exception)
             {

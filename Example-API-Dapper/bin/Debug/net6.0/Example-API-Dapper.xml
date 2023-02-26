@@ -60,5 +60,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_activity_Employees">
+            <summary>
+            Get_all_activity_Employees
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

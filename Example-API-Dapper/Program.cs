@@ -9,7 +9,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(s =>
 {
     s.SwaggerDoc("v1", new OpenApiInfo
@@ -32,31 +32,31 @@ builder.Services.AddScoped<IDbTransaction>(s =>
     return connection.BeginTransaction();
 });
 
-builder.Services.AddSingleton<DapperContext>();
-builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
-builder.Services.AddControllers();
-
 // Dependency Injections 
-builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddSingleton<DapperContext>()
+    .AddScoped<ICompanyRepository, CompanyRepository>()
+    .AddScoped<IDepartmentRepository, DepartmentRepository>()
+    .AddScoped<IEmployeesRepository, EmployeesRepository>();
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseSwagger();
+
+    app.UseSwaggerUI(s =>
+    {
+        s.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger API Version");
+        s.RoutePrefix = string.Empty;
+    });
+}
+else
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
-
-app.UseSwagger();
-
-app.UseSwaggerUI(s =>
-{
-    s.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger API Version");
-    s.RoutePrefix = string.Empty;
-});
 
 app.UseHttpsRedirection();
 
