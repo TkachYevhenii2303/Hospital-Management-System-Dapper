@@ -276,3 +276,8 @@ Values (9, 9, 1, 1, '2020-12-01', '2022-11-10');
 Set Identity_Insert dbo.Has_Role off 
 
 
+Select a.First_name, a.Last_name, b.Role_name
+From Employees a, Role b, Has_Role c 
+Where c.Employees_id = a.Id and c.Role_id = b.Id and b.Role_name = 'Hospitalist'
+
+

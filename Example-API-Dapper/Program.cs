@@ -25,13 +25,14 @@ builder.Services.AddSwaggerGen(s =>
     s.IncludeXmlComments(xmlPath);
 });
 
-builder.Services.AddScoped((s) => new SqlConnection(builder.Configuration.GetConnectionString("SqlConnection")));
+builder.Services.AddScoped<IDbConnection>(s => new SqlConnection(builder.Configuration.GetConnectionString("SqlConnection")));
 builder.Services.AddScoped<IDbTransaction>(s =>
 {
     SqlConnection connection = s.GetRequiredService<SqlConnection>();
     connection.Open();
     return connection.BeginTransaction();
 });
+
 
 // Dependency Injections 
 builder.Services.AddSingleton<DapperContext>()
