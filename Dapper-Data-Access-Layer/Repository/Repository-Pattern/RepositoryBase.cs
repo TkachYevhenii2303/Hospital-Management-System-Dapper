@@ -43,5 +43,11 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
 
             return result;
         }
+
+        public async Task Delete_Entity(int id)
+        {
+            var query = "Delete From Clinic Where Id = @Id";
+            await _connection.ExecuteAsync(query, new { id });
+        }
     }
 }

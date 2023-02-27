@@ -65,5 +65,26 @@ namespace Example_API_Dapper.Controllers
             }
         }
 
+        [HttpDelete("{id}", Name = "Department_ID")]
+        public async Task<IActionResult> Delete_Department(int id)
+        {
+            try
+            {
+                var department = await _DepartmentRepository.Get_by_Id(id);
+                if (department == null)
+                {
+                    return NotFound();
+                }
+
+                await _DepartmentRepository.Delete_Entity(id);
+
+                return NoContent();
+            }
+            catch (Exception exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
+            }
+        }
+
     }
 }

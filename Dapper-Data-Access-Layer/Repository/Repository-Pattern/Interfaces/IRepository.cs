@@ -10,5 +10,6 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces
     {
         public Task<IEnumerable<TEntity>> Get_all_Information();
         public Task<TEntity> Get_by_Id(int id);
+        public Task Delete_Entity(int id);
     }
 }

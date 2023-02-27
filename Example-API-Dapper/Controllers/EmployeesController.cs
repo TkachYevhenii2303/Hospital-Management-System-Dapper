@@ -54,5 +54,25 @@ namespace Example_API_Dapper.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
         }
+
+        [HttpDelete("{id}", Name = "Employees_ID")]
+        public async Task<IActionResult> Delete_Employees(int id)
+        {
+            try
+            {
+                var employee = await _employeesRepository.Get_by_Id(id);
+                if (employee == null)
+                {
+                    return NotFound();
+                }
+
+                await _employeesRepository.Delete_Entity(id);
+                return NoContent();
+            }
+            catch (Exception exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
+            }
+        }
     }
 }
