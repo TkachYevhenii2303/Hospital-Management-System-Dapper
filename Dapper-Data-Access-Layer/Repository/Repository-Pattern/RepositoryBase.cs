@@ -47,7 +47,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         public async Task Delete_Entity(int id)
         {
             var query = "Delete From Clinic Where Id = @Id";
-            await _connection.ExecuteAsync(query, new { id });
+            await _connection.ExecuteAsync(query, new { id }, transaction: _transaction);
         }
     }
 }

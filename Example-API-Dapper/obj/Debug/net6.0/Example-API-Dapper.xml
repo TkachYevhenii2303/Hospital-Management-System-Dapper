@@ -60,12 +60,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_Employees">
-            <summary>
-            Get all employees 
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_Employees_By_Specialization(System.String)">
             <summary>
             Get_all_Employees_By_Specialization

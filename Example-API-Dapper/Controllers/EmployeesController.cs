@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Example_Bussines_Logic.Dto;
@@ -19,6 +20,20 @@ namespace Example_API_Dapper.Controllers
         public EmployeesController(IEmployeesRepository employeesRepository)
         {
             _employeesRepository = employeesRepository;
+        }
+
+
+        [HttpGet("api/all")]
+        public async Task<IActionResult> Get_all_Information()
+        {
+            try
+            {
+                return Ok(await _employeesRepository.Get_all_Information());
+            }
+            catch (Exception exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message); ;
+            }
         }
 
         /// <summary>
