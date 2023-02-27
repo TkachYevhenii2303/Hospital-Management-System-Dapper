@@ -1,6 +1,5 @@
 using System.Data;
 using System.Reflection;
-using Dapper_Data_Access_Layer.Context;
 using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
@@ -34,7 +33,7 @@ builder.Services.AddScoped<IDbTransaction>(s =>
 });
 
 // Dependency Injections 
-builder.Services.AddSingleton<DapperContext>()
+builder.Services
     .AddScoped<ICompanyRepository, CompanyRepository>()
     .AddScoped<IDepartmentRepository, DepartmentRepository>()
     .AddScoped<IEmployeesRepository, EmployeesRepository>();

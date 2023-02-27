@@ -11,7 +11,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
 {
-    public class RepositoryBase<TEntity> : IRepository<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         protected SqlConnection _connection;
         protected IDbTransaction _transaction;
@@ -42,12 +42,6 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
             }
 
             return result;
-        }
-
-        public async Task Delete_Entity(int id)
-        {
-            var query = "Delete From Clinic Where Id = @Id";
-            await _connection.ExecuteAsync(query, new { id }, transaction: _transaction);
         }
     }
 }
