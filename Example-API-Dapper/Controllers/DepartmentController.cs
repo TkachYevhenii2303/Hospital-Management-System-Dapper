@@ -29,7 +29,7 @@ namespace Example_API_Dapper.Controllers
             }
             catch (Exception exception)
             {
-                return StatusCode(500, exception.Message);
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
         }
 

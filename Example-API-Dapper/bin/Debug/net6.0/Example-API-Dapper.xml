@@ -60,6 +60,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_Employees">
+            <summary>
+            Get all employees 
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_Employees_By_Specialization(System.String)">
             <summary>
             Get_all_Employees_By_Specialization
@@ -71,6 +77,13 @@
             <summary>
             Get_all_activity_Employees
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Delete_Employees(System.Int32)">
+            <summary>
+            Delete Employee by id
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
     </members>

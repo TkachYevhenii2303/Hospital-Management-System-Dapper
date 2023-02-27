@@ -38,10 +38,10 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
 
         public async Task<Employees> Create_Employee(EmployeesForCreationDto employee)
         {
-            string query = "Insert into dbo.Employees([First_name], [Last_name], [User_name], [Email], " +
-                           "[Password], [Mobile_number], [Phone_number], [Active_is]) " +
-                           "Values (@[First_name], @[Last_name], @[User_name], @[Email], " +
-                           "@[Password], @[Mobile_number], @[Phone_number], @[Active_is]) " +
+            string query = "Insert into dbo.Employees(First_name, Last_name, User_name, Email, " +
+                           "Password, Mobile_number, Phone_number, Active_is) " +
+                           "Values (@First_name, @Last_name, @User_name, @Email, " +
+                           "@Password, @Mobile_number, @Phone_number, @Active_is) " +
                            "Select Cast(Scope_Identity() as int)";
 
             var parameters = new DynamicParameters();

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
+using Dapper_Example_Bussines_Logic.Dto;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Example_API_Dapper.Controllers
 {
@@ -55,6 +58,11 @@ namespace Example_API_Dapper.Controllers
             }
         }
 
+        /// <summary>
+        /// Delete Employee by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}", Name = "Employees_ID")]
         public async Task<IActionResult> Delete_Employees(int id)
         {
