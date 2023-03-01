@@ -14,7 +14,7 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
     public class DepartmentRepository : RepositoryBase<Department>, IDepartmentRepository
     {
-        public DepartmentRepository(SqlConnection connection, IDbTransaction transaction) : base(connection, transaction, "Department")
+        public DepartmentRepository(IDbConnection connection, IDbTransaction transaction) : base(connection, transaction, "Department")
         {
         }
 

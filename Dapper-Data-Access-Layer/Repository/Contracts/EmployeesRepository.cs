@@ -8,14 +8,13 @@ using Dapper;
 using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
-using Dapper_Example_Bussines_Logic.Dto;
 using Microsoft.Data.SqlClient;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
     public class EmployeesRepository : RepositoryBase<Employees>, IEmployeesRepository
     {
-        public EmployeesRepository(SqlConnection connection, IDbTransaction transaction) : base(connection, transaction, "Employees")
+        public EmployeesRepository(IDbConnection connection, IDbTransaction transaction) : base(connection, transaction, "Employees")
         {
         }
 

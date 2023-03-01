@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper_Data_Access_Layer.Base_Entity;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
     [Table("Department")]
-    public class Department
+    public class Department : Entity
     {
-        public int Id { get; set; }
-        public string Department_name { get; set; }
+        public string Department_name { get; set; } = String.Empty;
         public int Clinic_id { get; set; }
     }
 }

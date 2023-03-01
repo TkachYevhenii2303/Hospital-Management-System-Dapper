@@ -16,6 +16,7 @@ Create table Clinic
 	[Clinic_name] [nvarchar](100) not null,
 	[Address] [nvarchar](100) not null,
 	[Details] [text] null,
+	[Created_at] [datetime] null default GETDATE(),
 	
 	Constraint [PK-Clinic] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
@@ -279,5 +280,6 @@ Set Identity_Insert dbo.Has_Role off
 Select a.First_name, a.Last_name, b.Role_name
 From Employees a, Role b, Has_Role c 
 Where c.Employees_id = a.Id and c.Role_id = b.Id and b.Role_name = 'Hospitalist'
+
 
 
