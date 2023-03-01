@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dapper-Data-Access-Layer\Dapper-Data-Access-Layer.csproj" />
+    <ProjectReference Include="..\Dapper-Example-Bussines-Logic\Dapper-Example-Bussines-Logic.csproj" />
   </ItemGroup>
 
 </Project>

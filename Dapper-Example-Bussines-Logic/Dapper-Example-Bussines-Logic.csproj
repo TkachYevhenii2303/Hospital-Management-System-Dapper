@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dapper-Data-Access-Layer\Dapper-Data-Access-Layer.csproj" />
+  </ItemGroup>
+
 </Project>

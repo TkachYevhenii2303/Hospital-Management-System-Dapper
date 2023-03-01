@@ -10,6 +10,7 @@
         "dependencies": {
           "Dapper": "2.0.123",
           "Dapper-Data-Access-Layer": "1.0.0",
+          "Dapper-Example-Bussines-Logic": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.0",
           "Microsoft.EntityFrameworkCore": "7.0.3",
           "Microsoft.EntityFrameworkCore.Design": "7.0.3",
@@ -713,7 +714,6 @@
       "Dapper-Data-Access-Layer/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.123",
-          "Dapper-Example-Bussines-Logic": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.0",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
@@ -723,6 +723,9 @@
         }
       },
       "Dapper-Example-Bussines-Logic/1.0.0": {
+        "dependencies": {
+          "Dapper-Data-Access-Layer": "1.0.0"
+        },
         "runtime": {
           "Dapper-Example-Bussines-Logic.dll": {}
         }

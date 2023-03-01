@@ -15,12 +15,10 @@ namespace Example_API_Dapper.Controllers
     [Route("api/companies")]
     public class CompaniesController : ControllerBase
     {
-        private readonly ICompanyRepository _companyRepository;
         private readonly IUnit_of_Work _unit_of_Work;
-        private readonly Logger<CompaniesController> _logger;
-        public CompaniesController(ICompanyRepository companyRepository, IUnit_of_Work unitOfWork, Logger<CompaniesController> logger)
+        private readonly ILogger _logger;
+        public CompaniesController(IUnit_of_Work unitOfWork, ILogger<CompaniesController> logger)
         {
-            _companyRepository = companyRepository;
             _unit_of_Work = unitOfWork;
             _logger = logger;
         }

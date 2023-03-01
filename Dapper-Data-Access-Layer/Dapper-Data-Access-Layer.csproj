@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dapper-Example-Bussines-Logic\Dapper-Example-Bussines-Logic.csproj" />
+
   </ItemGroup>
 
 </Project>

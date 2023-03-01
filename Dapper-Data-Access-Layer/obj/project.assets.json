@@ -869,16 +869,6 @@
             "rid": "win"
           }
         }
-      },
-      "Dapper-Example-Bussines-Logic/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Dapper-Example-Bussines-Logic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dapper-Example-Bussines-Logic.dll": {}
-        }
       }
     }
   },
@@ -2600,17 +2590,11 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "Dapper-Example-Bussines-Logic/1.0.0": {
-      "type": "project",
-      "path": "../Dapper-Example-Bussines-Logic/Dapper-Example-Bussines-Logic.csproj",
-      "msbuildProject": "../Dapper-Example-Bussines-Logic/Dapper-Example-Bussines-Logic.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Dapper >= 2.0.123",
-      "Dapper-Example-Bussines-Logic >= 1.0.0",
       "Microsoft.Data.SqlClient >= 5.1.0",
       "Microsoft.Extensions.Configuration >= 7.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
@@ -2647,11 +2631,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "D:\\Education - Programming and Books\\Learning ASP.NET + MVC and Blazor\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj": {
-              "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET + MVC and Blazor\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
