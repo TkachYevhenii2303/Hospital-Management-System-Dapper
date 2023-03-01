@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 
 namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
@@ -11,9 +12,11 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
     public class Unit_of_Work : IUnit_of_Work
     {
         private IDbTransaction transaction;
-        public Unit_of_Work(IDbTransaction transaction)
+        public ICompanyRepository CompanyRepository { get; }
+        public Unit_of_Work(IDbTransaction transaction, ICompanyRepository companyRepository)
         {
             this.transaction = transaction;
+            CompanyRepository = companyRepository;
         }
 
         public void Dispose()

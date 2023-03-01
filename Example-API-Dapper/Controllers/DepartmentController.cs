@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
+using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Example_API_Dapper.Controllers
@@ -13,6 +14,13 @@ namespace Example_API_Dapper.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentRepository _departmentRepository;
-        public DepartmentController(IDepartmentRepository departmentRepository) => _departmentRepository = departmentRepository;
+        private readonly IUnit_of_Work _unit_of_Work;
+        private readonly Logger<CompaniesController> _logger;
+        public DepartmentController(IDepartmentRepository departmentRepository, IUnit_of_Work unitOfWork, Logger<CompaniesController> logger)
+        {
+            _departmentRepository = departmentRepository;
+            _unit_of_Work = unitOfWork;
+            _logger = logger;
+        }
     }
 }

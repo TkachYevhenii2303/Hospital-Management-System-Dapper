@@ -3,6 +3,8 @@ using System.Reflection;
 using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
+using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
+using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Microsoft.Data.SqlClient;
 using Microsoft.OpenApi.Models;
 
@@ -24,7 +26,7 @@ builder.Services.AddSwaggerGen(s =>
     s.IncludeXmlComments(xmlPath);
 });
 
-builder.Services.AddScoped<IDbConnection>(s => new SqlConnection(builder.Configuration.GetConnectionString("SqlConnection")));
+builder.Services.AddScoped<SqlConnection>(s => new SqlConnection(builder.Configuration.GetConnectionString("SqlConnection")));
 builder.Services.AddScoped<IDbTransaction>(s =>
 {
     SqlConnection connection = s.GetRequiredService<SqlConnection>();
@@ -34,6 +36,7 @@ builder.Services.AddScoped<IDbTransaction>(s =>
 
 // Dependency Injections 
 builder.Services
+    .AddScoped<IUnit_of_Work, Unit_of_Work>()
     .AddScoped<ICompanyRepository, CompanyRepository>()
     .AddScoped<IDepartmentRepository, DepartmentRepository>()
     .AddScoped<IEmployeesRepository, EmployeesRepository>();

@@ -5,13 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper_Data_Access_Layer.Base_Entity;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
     [Table("Employees")]
-    public class Employees
+    public class Employees : Entity
     {
-        public int Id { get; set; }
         public string First_name { get; set; } = string.Empty;
         public string Last_name { get; set; } = string.Empty;
         public string User_name { get; set; } = string.Empty;

@@ -16,6 +16,5 @@ namespace Dapper_Data_Access_Layer.Entities
         public TimeOnly Time_from { get; set; }
         public TimeOnly Time_to { get; set; }
         public bool Active_is { get; set; }
-        public List<Employees> Employees { get; set; } = new List<Employees>();
     }
 }

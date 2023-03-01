@@ -13,11 +13,11 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
 {
     public class RepositoryBase<TEntity> : IGenericRepository<TEntity> where TEntity : Entity
     {
-        protected IDbConnection _connection;
+        protected SqlConnection _connection;
         protected IDbTransaction _transaction;
         protected string _table;
 
-        public RepositoryBase(IDbConnection connection, IDbTransaction transaction, string table)
+        public RepositoryBase(SqlConnection connection, IDbTransaction transaction, string table)
         {
             _connection = connection;
             _transaction = transaction;

@@ -4,81 +4,11 @@
         <name>Example-API-Dapper</name>
     </assembly>
     <members>
-        <member name="M:Example_API_Dapper.Controllers.CompaniesController.GetCompanies">
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.Get_all_Information">
             <summary>
-            Returns the list of Companies 
+            Get all information about clinics in database
             </summary>
-            <returns>The list of Companies</returns>
-            <remarks>Simple Request - Get: /api/companies</remarks>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.CompaniesController.GetCompany(System.Int32)">
-            <summary>
-            Return the company by ID
-            </summary>
-            <param name="id">Parameter for the Request</param>
-            <returns>The company by id</returns>
-            <remarks>The Request with the parameter</remarks>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.CompaniesController.CreateCompany(Dapper_Example_Bussines_Logic.Dto.CompanyForCreationDto)">
-            <summary>
-            Created the new Company for the Database
-            </summary>
-            <param name="company"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.CompaniesController.UpdateCompany(System.Int32,Dapper_Example_Bussines_Logic.Dto.CompanyForCreationDto)">
-            <summary>
-            Update the concrete Clinic by Id
-            </summary>
-            <param name="id"></param>
-            <param name="company"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.CompaniesController.DeleteCompany(System.Int32)">
-            <summary>
-            Delete some clinic by Id 
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.CompaniesController.CompanyDepartmentId(System.Int32)">
-            <summary>
-            Find Clinic by Department ID
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.CompaniesController.GetCompaniesMultiMapping">
-            <summary>
-            Get all clinic with Department using Multi Mapping
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.DepartmentController.Get_all_Information">
-            <summary>
-            Get all Information about Departments
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_Employees_By_Specialization(System.String)">
-            <summary>
-            Get_all_Employees_By_Specialization
-            </summary>
-            <param name="specialization"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_activity_Employees">
-            <summary>
-            Get_all_activity_Employees
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Delete_Employees(System.Int32)">
-            <summary>
-            Delete Employee by id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
+            <returns>The list of all clinic in database</returns>
         </member>
     </members>
 </doc>

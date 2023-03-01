@@ -14,7 +14,7 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
     public class EmployeesRepository : RepositoryBase<Employees>, IEmployeesRepository
     {
-        public EmployeesRepository(IDbConnection connection, IDbTransaction transaction) : base(connection, transaction, "Employees")
+        public EmployeesRepository(SqlConnection connection, IDbTransaction transaction) : base(connection, transaction, "Employees")
         {
         }
 
