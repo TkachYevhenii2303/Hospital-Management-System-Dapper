@@ -109,5 +109,76 @@ namespace Example_API_Dapper.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
         }
+
+        /// <summary>
+        /// Method for the Deleting the entity by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("Id")]
+        public async Task<IActionResult> Delete_Entity(int id)
+        {
+            try
+            {
+                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+                if (result == null)
+                {
+                    _logger.LogInformation($"The model with Id: {id} was not found in the database!");
+                    return NotFound();
+                }
+
+                await _unit_of_Work.CompanyRepository.Delete_Entity(id);
+                _unit_of_Work.Commit();
+                return StatusCode(StatusCodes.Status204NoContent);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError($"The transaction failed. An error occurred in the {this.GetType().Name} model!");
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
+            }
+        }
+
+        /// <summary>
+        /// Method for updating some entity
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        [HttpPut("Id")]
+        public async Task<IActionResult> Update_Entity(int id, Clinic entity)
+        {
+            try
+            {
+                if (entity == null)
+                {
+                    _logger.LogInformation($"We got empty json from client side");
+                    return BadRequest($"The event object is null");
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogInformation($"We received incorrect json from the client side");
+                    return BadRequest("The event object is invalid");
+                }
+
+                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+
+                if (result == null)
+                {
+                    _logger.LogInformation($"The model with Id: {id} was not found in the database!");
+                    return NotFound();
+                }
+
+                await _unit_of_Work.CompanyRepository.Update_Entity(entity);
+                _unit_of_Work.Commit();
+                return StatusCode(StatusCodes.Status204NoContent);
+
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError($"The transaction failed. An error occurred in the {this.GetType().Name} model!");
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
+            }
+        }
     }
 }

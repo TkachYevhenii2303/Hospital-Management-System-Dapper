@@ -124,14 +124,14 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         }
         private string Generate_Update_Query()
         {
-            var builder = new StringBuilder($"Update {_table} set");
+            var builder = new StringBuilder($"Update {_table} set ");
             var properties = List_Properties(Get_Properties);
 
             properties.ForEach(property =>
             {
                 if (!property.Equals("Id"))
                 {
-                    builder.Append($"{property} = @{property}");
+                    builder.Append($"{property} = @{property},");
                 }
             });
 

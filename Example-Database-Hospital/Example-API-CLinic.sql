@@ -17,6 +17,7 @@ Create table Clinic
 	[Address] [nvarchar](100) not null,
 	[Details] [text] null,
 	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
 	
 	Constraint [PK-Clinic] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
@@ -35,6 +36,8 @@ Create table Department
 	[Id] [int] IDENTITY(1, 1) not null, 
 	[Department_name] [nvarchar](100) not null,
 	[Clinic_id] [int] not null,
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
 
 	Constraint [PK-Department] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
@@ -50,7 +53,6 @@ Go
 Set quoted_identifier on
 Go
 
--- Creating the table for the Employees 
 Create table Employees
 (
 	[Id] [int] IDENTITY(1, 1) not null, 
@@ -62,6 +64,8 @@ Create table Employees
 	[Phone_number] [nvarchar](255) null,
 	[Mobile_number] [nvarchar](255) null,
 	[Active_is] [bit] not null,
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
 
 	Constraint [PK-Employees] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
@@ -81,6 +85,8 @@ Create table [Role]
 (
 	[Id] [int] IDENTITY(1, 1) not null,
 	[Role_name] [nvarchar](100) not null,
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
 
 	
 	Constraint [PK-Has-Role] Primary key Clustered([Id] ASC)
@@ -105,6 +111,8 @@ Create table [Has_Role]
 	[Time_from] [datetime] not null, 
 	[Time_to] [datetime] null,
 	[Active_is] [bit] not null,
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
 
 	Constraint [PK-Has-Role-IDENTITY] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
@@ -131,6 +139,8 @@ Create table [In_Department]
 	[Time_from] [datetime] not null, 
 	[Time_to] [datetime] null,
 	[Active_is] [bit] not null,
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
 
 	Constraint [PK-In-Department] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
@@ -157,6 +167,8 @@ Create table [Shedule]
 	[Date] [date] not null,
 	[Time_start] [datetime] not null, 
 	[Time_end] [datetime] not null,
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
 
 	Constraint [PK-Shedule] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,

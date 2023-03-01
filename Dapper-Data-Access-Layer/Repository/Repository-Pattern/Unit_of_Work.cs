@@ -13,10 +13,12 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
     {
         private IDbTransaction transaction;
         public ICompanyRepository CompanyRepository { get; }
-        public Unit_of_Work(IDbTransaction transaction, ICompanyRepository companyRepository)
+        public IEmployeesRepository EmployeesRepository { get; }
+        public Unit_of_Work(IDbTransaction transaction, ICompanyRepository companyRepository, IEmployeesRepository employeesRepository)
         {
             this.transaction = transaction;
             CompanyRepository = companyRepository;
+            EmployeesRepository = employeesRepository;
         }
 
         public void Dispose()

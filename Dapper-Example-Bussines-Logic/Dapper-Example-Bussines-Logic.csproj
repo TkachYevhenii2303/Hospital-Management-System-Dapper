@@ -11,4 +11,9 @@
     <ProjectReference Include="..\Dapper-Data-Access-Layer\Dapper-Data-Access-Layer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO_Models\" />
+    <Folder Include="Services\Interfaces\" />
+  </ItemGroup>
+
 </Project>

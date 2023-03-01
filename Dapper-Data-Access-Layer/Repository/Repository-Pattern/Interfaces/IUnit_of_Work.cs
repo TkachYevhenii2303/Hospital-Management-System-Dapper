@@ -10,6 +10,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces
     public interface IUnit_of_Work : IDisposable
     {
         public ICompanyRepository CompanyRepository { get; }
+        public IEmployeesRepository EmployeesRepository { get; }
         public void Commit();
     }
 }

@@ -24,5 +24,20 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.Delete_Entity(System.Int32)">
+            <summary>
+            Method for the Deleting the entity by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.Update_Entity(System.Int32,Dapper_Data_Access_Layer.Entities.Clinic)">
+            <summary>
+            Method for updating some entity
+            </summary>
+            <param name="id"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
