@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 using Dapper_Data_Access_Layer.Base_Entity;
+using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Microsoft.Data.SqlClient;
 
@@ -45,9 +46,9 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         /// <exception cref="KeyNotFoundException"></exception>
         public async Task<TEntity> Get_by_Id(int id)
         {
-            string query = $"Select * From {_table} Where Id = @id";
+            string query = $"Select * From {_table} Where Id = @Id";
             var result =
-                await _connection.QueryFirstOrDefaultAsync<TEntity>(query, param: new { id }, transaction: _transaction);
+                await _connection.QuerySingleOrDefaultAsync<TEntity>(query, param: new { Id = id }, transaction: _transaction);
 
             if (result == null)
             {
@@ -107,7 +108,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
 
         private string Generate_Insert_Query()
         {
-            var builder = new StringBuilder($"Insert into {_table}");
+            var builder = new StringBuilder($"SET IDENTITY_INSERT {_table} ON Insert into {_table}");
             builder.Append(" (");
 
             var properties = List_Properties(Get_Properties);

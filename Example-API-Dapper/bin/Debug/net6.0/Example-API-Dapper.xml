@@ -10,5 +10,19 @@
             </summary>
             <returns>The list of all clinic in database</returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.Get_by_Id(System.Int32)">
+            <summary>
+            Get the concrete clinic by id 
+            </summary>
+            <param name="id"></param>
+            <returns>Clinic object</returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.CompaniesController.Insert_Entity(Dapper_Data_Access_Layer.Entities.Clinic)">
+            <summary>
+            Method for the Insert new Entity to the Clinic List
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

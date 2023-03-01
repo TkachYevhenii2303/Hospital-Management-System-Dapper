@@ -15,6 +15,5 @@ namespace Dapper_Data_Access_Layer.Entities
         public string Clinic_name { get; set; } = String.Empty;
         public string Address { get; set; } = String.Empty;
         public string Details { get; set; } = String.Empty; 
-        public List<Department> Departments { get; set; } = new List<Department>();
     }
 }

@@ -44,5 +44,70 @@ namespace Example_API_Dapper.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, exception);
             }
         }
+
+        /// <summary>
+        /// Get the concrete clinic by id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Clinic object</returns>
+        [HttpGet("Id")]
+        public async Task<IActionResult> Get_by_Id(int id)
+        {
+            try
+            {
+                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+                _unit_of_Work.Commit();
+
+                if (result == null)
+                {
+                    _logger.LogInformation($"The model with Id: {id} was not found in the database!");
+                    return NotFound();
+                }
+                else
+                {
+                    _logger.LogInformation($"Received an event from the database!");
+                    return Ok(result);
+                }
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError($"The transaction failed. An error occurred in the {this.GetType().Name} model!");
+                return StatusCode(StatusCodes.Status500InternalServerError, exception);
+            }
+        }
+
+        /// <summary>
+        /// Method for the Insert new Entity to the Clinic List
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> Insert_Entity(Clinic entity)
+        {
+            try
+            {
+                if (entity == null)
+                {
+                    _logger.LogInformation($"We got empty json from client side");
+                    return BadRequest($"The event object is null");
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    _logger.LogInformation($"We received incorrect json from the client side");
+                    return BadRequest("The event object is invalid");
+                }
+
+                await _unit_of_Work.CompanyRepository.Insert_Entity(entity);
+                _unit_of_Work.Commit();
+
+                return StatusCode(StatusCodes.Status201Created);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError($"The transaction failed. An error occurred in the {this.GetType().Name} model!");
+                return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
+            }
+        }
     }
 }
