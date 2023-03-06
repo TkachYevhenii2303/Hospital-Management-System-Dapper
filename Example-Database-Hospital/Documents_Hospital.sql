@@ -1,8 +1,9 @@
-Create database [Patients_and_appointments]
+Create database [Documents_Hospital]
 Go
 
-Use [Patients_and_appointments]
+Use [Documents_Hospital]
 Go
+
 
 Set ansi_nulls on
 Go
@@ -75,21 +76,6 @@ Set ansi_nulls on
 Go
 Set quoted_identifier on
 Go
-Create table [Appointment_Status]
-(
-	[Id] [int] IDENTITY(1, 1) not null, 
-	[Status_Name] [nvarchar](100) not null,
-
-	Constraint [PK-Appointment_Status] Primary key Clustered([Id] ASC)
-	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
-	allow_row_locks = on, allow_page_locks = on) on [Primary],
-)
-Go
-
-Set ansi_nulls on
-Go
-Set quoted_identifier on
-Go
 Create table [Appointment]
 (
 	[Id] [int] IDENTITY(1, 1) not null, 
@@ -109,8 +95,6 @@ Create table [Appointment]
 	Constraint [FK-to-In_Department] Foreign key ([In_Department_Id]) references [In_Department]([Id]),
 
 	Constraint [FK-to-Patient_Case_Id] Foreign key ([Patient_Case_Id]) references [Patients_Case]([Id]),
-
-	Constraint [FK-to-Appointment_Status] Foreign key ([Appointment_Status_Id]) references [Appointment_Status]([Id])
 )
 Go
 
@@ -118,21 +102,62 @@ Set ansi_nulls on
 Go
 Set quoted_identifier on
 Go
-Create table [Status_History]
+Create table [Document_type]
 (
-	[Id] [int] IDENTITY(1, 1) not null, 
-	[Appointment_Id] [int] not null,
-	[Appointment_Status_Id] [int] not null,
-	[Status_time] [datetime] not null,
-	[Details] [nvarchar](max) not null,
+	[Id] [int] IDENTITY(1, 1) not null,
+	[Type_name] [nvarchar](max) not null,
 
-	Constraint [PK-Status_History] Primary key Clustered([Id] ASC)
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
+
+	Constraint [PK-Documents_type] Primary key Clustered([Id] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
 	allow_row_locks = on, allow_page_locks = on) on [Primary],
-
-	Constraint [FK-Appointment] Foreign key ([Appointment_Id]) references [Appointment]([Id]), 
-
-	Constraint [FK-Appointment_Status_Id] Foreign key ([Appointment_Status_Id]) references [Appointment_Status]([Id])
 )
 Go
 
+Set ansi_nulls on
+Go
+Set quoted_identifier on
+Go
+Create table [Documents]
+(
+	[Id] [int] IDENTITY(1, 1) not null,
+	[Document_Internal_id] [nvarchar](64) not null,
+	[Document_Name] [nvarchar](100) not null,
+	[Document_type_Id] [int] not null,
+	[Document_link] [nvarchar](100) not null,
+	[Document_Details] [nvarchar](100) not null,
+
+	[Patients_Id] [int] null, 
+	[Patient_Case_Id] [int] null,
+	[In_Department_Id] [int] null, 
+	[Appointment_Status_Id] [int] null,
+
+	[Created_at] [datetime] null default GETDATE(),
+	[Updated_at] [datetime] null default GETDATE(),
+
+	Constraint [PK-Documents] Primary key Clustered([Id] ASC)
+	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
+	allow_row_locks = on, allow_page_locks = on) on [Primary],
+
+	Constraint [UN_Document_Id] Unique ([Document_Internal_id]),
+
+	Constraint [FK-to_Documents_type] foreign key ([Document_type_Id]) references [Document_type]([Id]),
+
+	Constraint [FK-to-Patients-Second] Foreign key ([Patients_Id]) references [Patients]([Id]),
+		
+	Constraint [FK-to-In_Department-Second] Foreign key ([In_Department_Id]) references [In_Department]([Id]),
+
+	Constraint [FK-to-Patient_Case_Id-Second] Foreign key ([Patient_Case_Id]) references [Patients_Case]([Id]),
+
+	Constraint [FK-to-Appointment_Status-Second] Foreign key ([Appointment_Status_Id]) references [Appointment]([Id])
+)
+Go
+
+Drop table dbo.Appointment;
+Drop table dbo.Document_type;
+Drop table dbo.Documents;
+Drop table dbo.In_Department;
+Drop table dbo.Patients;
+Drop table dbo.Patients_Case;

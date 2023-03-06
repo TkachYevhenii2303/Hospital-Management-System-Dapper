@@ -1,12 +1,12 @@
 using System.Data;
 using System.Reflection;
+using Dapper_Data_Access_Layer.Dapper;
 using Dapper_Data_Access_Layer.Entities;
+using Dapper_Data_Access_Layer.Migration;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
-using Dapper_Example_Bussines_Logic.Services;
-using Dapper_Example_Bussines_Logic.Services.Interfaces;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -15,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddSingleton<Context>();
+builder.Services.AddSingleton<Database>();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
@@ -45,7 +47,7 @@ builder.Services.AddScoped<IDbTransaction>(s =>
 builder.Services
     .AddScoped<IUnit_of_Work, Unit_of_Work>()
     .AddScoped<ICompanyRepository, CompanyRepository>()
-    .AddScoped<ICompanyServices, CompanyServices>();
+    .AddScoped<IEmployeesRepository, EmployeesRepository>();
 
 
 var app = builder.Build();

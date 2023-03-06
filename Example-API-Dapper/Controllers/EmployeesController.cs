@@ -17,17 +17,17 @@ namespace Example_API_Dapper.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IUnit_of_Work _unit_of_Work;
-        private readonly Logger<CompaniesController> _logger;
-        public EmployeesController(IEmployeesRepository employeesRepository, Logger<CompaniesController> logger, IUnit_of_Work unitOfWork)
+        private readonly ILogger _logger;
+        public EmployeesController(IEmployeesRepository employeesRepository, ILogger<CompaniesController> logger, IUnit_of_Work unitOfWork)
         {
             _logger = logger;
             _unit_of_Work = unitOfWork;
         }
 
         /// <summary>
-        /// Get all information about clinics in database
+        /// Get all information about employees in database
         /// </summary>
-        /// <returns>The list of all clinic in database</returns>
+        /// <returns>The list of all employees in database</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employees>>> Get_all_Information()
         {
@@ -47,16 +47,16 @@ namespace Example_API_Dapper.Controllers
         }
 
         /// <summary>
-        /// Get the concrete clinic by id 
+        /// Get the concrete employee by id 
         /// </summary>
         /// <param name="id"></param>
-        /// <returns>Clinic object</returns>
+        /// <returns>Employee object</returns>
         [HttpGet("Id")]
         public async Task<IActionResult> Get_by_Id(int id)
         {
             try
             {
-                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+                var result = await _unit_of_Work.EmployeesRepository.Get_by_Id(id);
                 _unit_of_Work.Commit();
 
                 if (result == null)
@@ -78,12 +78,12 @@ namespace Example_API_Dapper.Controllers
         }
 
         /// <summary>
-        /// Method for the Insert new Entity to the Clinic List
+        /// Method for the Insert new Entity to the Employee List
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Insert_Entity(Clinic entity)
+        public async Task<IActionResult> Insert_Entity(Employees entity)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace Example_API_Dapper.Controllers
                     return BadRequest("The event object is invalid");
                 }
 
-                await _unit_of_Work.CompanyRepository.Insert_Entity(entity);
+                await _unit_of_Work.EmployeesRepository.Insert_Entity(entity);
                 _unit_of_Work.Commit();
 
                 return StatusCode(StatusCodes.Status201Created);
@@ -121,14 +121,14 @@ namespace Example_API_Dapper.Controllers
         {
             try
             {
-                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+                var result = await _unit_of_Work.EmployeesRepository.Get_by_Id(id);
                 if (result == null)
                 {
                     _logger.LogInformation($"The model with Id: {id} was not found in the database!");
                     return NotFound();
                 }
 
-                await _unit_of_Work.CompanyRepository.Delete_Entity(id);
+                await _unit_of_Work.EmployeesRepository.Delete_Entity(id);
                 _unit_of_Work.Commit();
                 return StatusCode(StatusCodes.Status204NoContent);
             }
@@ -146,7 +146,7 @@ namespace Example_API_Dapper.Controllers
         /// <param name="entity"></param>
         /// <returns></returns>
         [HttpPut("Id")]
-        public async Task<IActionResult> Update_Entity(int id, Clinic entity)
+        public async Task<IActionResult> Update_Entity(int id, Employees entity)
         {
             try
             {
@@ -162,7 +162,7 @@ namespace Example_API_Dapper.Controllers
                     return BadRequest("The event object is invalid");
                 }
 
-                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+                var result = await _unit_of_Work.EmployeesRepository.Get_by_Id(id);
 
                 if (result == null)
                 {
@@ -170,7 +170,7 @@ namespace Example_API_Dapper.Controllers
                     return NotFound();
                 }
 
-                await _unit_of_Work.CompanyRepository.Update_Entity(entity);
+                await _unit_of_Work.EmployeesRepository.Update_Entity(entity);
                 _unit_of_Work.Commit();
                 return StatusCode(StatusCodes.Status204NoContent);
 
