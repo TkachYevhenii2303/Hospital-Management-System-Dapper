@@ -181,5 +181,20 @@ namespace Example_API_Dapper.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
         }
+
+
+        [HttpGet("First_name")]
+        public async Task<IActionResult> Get_Employee_By_Name(string name)
+        {
+            try
+            {
+
+            }
+            catch (Exception exception)
+            {
+
+            }
+        }
+
     }
 }

@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example-API-Dapper", "Examp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapper-Data-Access-Layer", "..\Dapper-Data-Access-Layer\Dapper-Data-Access-Layer.csproj", "{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper-Example-Bussines-Logic", "..\Dapper-Example-Bussines-Logic\Dapper-Example-Bussines-Logic.csproj", "{81BDF626-E148-4616-99ED-F3DA6BF80C03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapper-Example-Bussines-Logic", "..\Dapper-Example-Bussines-Logic\Dapper-Example-Bussines-Logic.csproj", "{81BDF626-E148-4616-99ED-F3DA6BF80C03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity-Framework-Hospital", "Entity-Framework-Hospital", "{91F7E9F5-6D99-430F-9D8C-47993086D3E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dapper-Hospital", "Dapper-Hospital", "{C02B8498-BC29-4410-A5A0-0C22077BD671}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

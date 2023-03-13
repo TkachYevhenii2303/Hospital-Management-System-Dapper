@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J95aI73Qqorz/Yo5NNMAJV2P/ltNDrnoyZKJWF2+G36wjkGUGwZlesmwzvv9p+yH51Bbug55/eJn1Vimpx4qBQ==",
+  "dgSpecHash": "V2ErtsIzoLYR8Ww6vJo4LVQ8yAKh4b9mJj3j6l80lErV6MdY2slHBwHhwjE9rUu67FaIXKVXzr9ggNVEaYJR7A==",
   "success": true,
-  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET + MVC and Blazor\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\Example-API-Dapper.csproj",
+  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\Example-API-Dapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

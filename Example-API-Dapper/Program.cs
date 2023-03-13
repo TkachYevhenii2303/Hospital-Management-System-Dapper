@@ -1,8 +1,6 @@
 using System.Data;
 using System.Reflection;
-using Dapper_Data_Access_Layer.Dapper;
 using Dapper_Data_Access_Layer.Entities;
-using Dapper_Data_Access_Layer.Migration;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
@@ -15,8 +13,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddSingleton<Context>();
-builder.Services.AddSingleton<Database>();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();

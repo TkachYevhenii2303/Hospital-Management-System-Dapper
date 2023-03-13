@@ -180,13 +180,4 @@ Create table [Shedule]
 )
 Go
 
-Drop table dbo.Has_Role;
-Drop table dbo.Role;
-Drop table dbo.Shedule;
-Drop table dbo.In_Department;
-Drop table dbo.Department;
-Drop table dbo.Employees;
-Drop table dbo.Clinic
-
-
 

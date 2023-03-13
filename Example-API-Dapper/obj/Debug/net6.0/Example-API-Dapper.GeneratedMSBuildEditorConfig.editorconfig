@@ -9,37 +9,37 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Example_API_Dapper
 build_property.RootNamespace = Example_API_Dapper
-build_property.ProjectDir = D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\
+build_property.ProjectDir = D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper
+build_property.MSBuildProjectDirectory = D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Education - Programming and Books/Learning ASP.NET + MVC and Blazor/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Error.cshtml]
+[D:/Education - Programming and Books/Learning ASP.NET Core/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education - Programming and Books/Learning ASP.NET + MVC and Blazor/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Index.cshtml]
+[D:/Education - Programming and Books/Learning ASP.NET Core/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education - Programming and Books/Learning ASP.NET + MVC and Blazor/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Privacy.cshtml]
+[D:/Education - Programming and Books/Learning ASP.NET Core/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education - Programming and Books/Learning ASP.NET + MVC and Blazor/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Education - Programming and Books/Learning ASP.NET Core/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education - Programming and Books/Learning ASP.NET + MVC and Blazor/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/_ViewImports.cshtml]
+[D:/Education - Programming and Books/Learning ASP.NET Core/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education - Programming and Books/Learning ASP.NET + MVC and Blazor/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/_ViewStart.cshtml]
+[D:/Education - Programming and Books/Learning ASP.NET Core/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Education - Programming and Books/Learning ASP.NET + MVC and Blazor/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Shared/_Layout.cshtml]
+[D:/Education - Programming and Books/Learning ASP.NET Core/ASP.NET Core Lessons/Example-Dapper-API-Migration/Example-API-Dapper/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-438c57ea14

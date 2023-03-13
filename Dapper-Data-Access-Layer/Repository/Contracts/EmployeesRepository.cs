@@ -34,5 +34,15 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
             IEnumerable<Employees> result = await _connection.QueryAsync<Employees>(query, transaction: _transaction);
             return result;
         }
+
+        public async Task<Employees> Get_By_Name(string name)
+        {
+            string query = "Select a.First_name, a.Last_name" +
+                           "From Employees a" +
+                           $"Where a.First_name = '{name}'";
+
+            var result = await _connection.QueryFirstAsync<Employees>(query, transaction: _transaction);
+            return result;
+        }
     }
 }

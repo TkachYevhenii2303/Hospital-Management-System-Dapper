@@ -12,5 +12,6 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
     {
         public Task<IEnumerable<Employees>> Get_all_activity_Employees();
         public Task<IEnumerable<Employees>> Get_all_Employees_By_Specialization(string specialization);
+        public Task<Employees> Get_By_Name (string name); 
     }
 }

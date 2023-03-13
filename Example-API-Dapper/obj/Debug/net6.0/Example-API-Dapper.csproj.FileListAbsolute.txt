@@ -98,3 +98,37 @@ D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET C
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.xml
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\Dapper-Example-Bussines-Logic.dll
 D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\Dapper-Example-Bussines-Logic.pdb
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Abstractions.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Extensions.Oracle.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Extensions.Postgres.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Extensions.SqlAnywhere.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Extensions.SqlServer.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.Core.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.Db2.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.Firebird.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.Hana.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.MySql.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.Oracle.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.Postgres.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.Redshift.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.SqlAnywhere.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.SQLite.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.SqlServer.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\FluentMigrator.Runner.SqlServerCe.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\System.Data.SqlServerCe.dll
+D:\Education - Programming and Books\Learning ASP.NET + MVC and Blazor\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\de-DE\FluentMigrator.Abstractions.resources.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.csproj.AssemblyReference.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.AssemblyInfoInputs.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.AssemblyInfo.cs
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.csproj.CoreCompileInputs.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.MvcApplicationPartsAssemblyInfo.cs
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.MvcApplicationPartsAssemblyInfo.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.RazorAssemblyInfo.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.RazorAssemblyInfo.cs
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\refint\Example-API-Dapper.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.xml
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.pdb

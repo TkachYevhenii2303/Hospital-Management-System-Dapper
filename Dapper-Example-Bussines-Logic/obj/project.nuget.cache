@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OKTwSC+vx2SCXDHdtfK4ZoObRCYPVPK03eiDQEwYoGnJ1e/zgCZ3Yi1BPEWxwV1MHxdBxHpyDrtXCp5P+vnolA==",
+  "dgSpecHash": "/LB+o7ZUH1cT/QHYoXIYoxZDXa5yNRKSqDTyXTmVEyYGiW+eEYErSI4itA8qYV/jrEmQc16KEAqH2cxU+ybYeQ==",
   "success": true,
-  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET + MVC and Blazor\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj",
+  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

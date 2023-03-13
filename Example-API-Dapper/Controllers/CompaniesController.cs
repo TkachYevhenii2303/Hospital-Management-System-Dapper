@@ -162,7 +162,7 @@ namespace Example_API_Dapper.Controllers
                 }
 
                 var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
-
+                
                 if (result == null)
                 {
                     _logger.LogInformation($"The model with Id: {id} was not found in the database!");
