@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO
 {
-    internal class Insert_Employees_Request_DTO
+    public class Insert_Employees_Request_DTO
     {
         public string First_name { get; set; } = string.Empty;
         

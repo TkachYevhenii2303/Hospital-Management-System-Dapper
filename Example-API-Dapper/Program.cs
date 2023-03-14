@@ -49,7 +49,6 @@ builder.Services
     .AddScoped<IEmployeesRepository, EmployeesRepository>()
     .AddScoped<IDepartmentRepository, DepartmentRepository>();
 
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
