@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper_Data_Access_Layer.Entities;
-using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Example_API_Dapper.Controllers
 {
@@ -32,11 +32,11 @@ namespace Example_API_Dapper.Controllers
         [HttpGet(Name = "Get all information about Employees")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<Employees>>> Get_all_Information()
+        public async Task<ActionResult<Services_Repsponse<IEnumerable<Get_Empoyee_Response_DTO>>>> Get_all_Information()
         {
             try
             {
-                IEnumerable<Employees> result = await _unit_of_Work.EmployeesRepository.Get_all_Information();
+                var result = await _unit_of_Work.EmployeesRepository.Get_all_Information();
                 _unit_of_Work.Commit();
                 _logger.LogInformation($"Received all events from the database! {this.GetType().Name} model!");
                 return Ok(result);
@@ -58,7 +58,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Get_by_Id(int id)
+        public async Task<ActionResult<Services_Repsponse<Get_Empoyee_Response_DTO>>> Get_by_Id(Guid id)
         {
             try
             {
@@ -131,7 +131,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete_Entity(int id)
+        public async Task<IActionResult> Delete_Entity(Guid id)
         {
             try
             {
@@ -164,7 +164,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Update_Entity(int id, Employees entity)
+        public async Task<IActionResult> Update_Entity(Guid id, Employees entity)
         {
             try
             {

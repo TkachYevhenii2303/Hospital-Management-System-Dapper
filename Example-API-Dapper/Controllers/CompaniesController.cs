@@ -31,11 +31,11 @@ namespace Example_API_Dapper.Controllers
         [HttpGet(Name = "Get all information about companies")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<Clinic>>> Get_all_Information()
+        public async Task<ActionResult<Services_Repsponse<IEnumerable<Clinic>>>> Get_all_Information()
         {
             try
             {
-                IEnumerable<Clinic> result = await _unit_of_Work.CompanyRepository.Get_all_Information();
+                var result = await _unit_of_Work.CompanyRepository.Get_all_Information();
                 _unit_of_Work.Commit();
                 _logger.LogInformation($"Received all events from the database! {this.GetType().Name} model!");
                 return Ok(result);
@@ -57,7 +57,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Get_by_Id(int id)
+        public async Task<ActionResult<Services_Repsponse<Clinic>>> Get_by_Id(Guid id)
         {
             try
             {
@@ -130,7 +130,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete_Entity(int id)
+        public async Task<IActionResult> Delete_Entity(Guid id)
         {
             try
             {
@@ -163,7 +163,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Update_Entity(int id, Clinic entity)
+        public async Task<IActionResult> Update_Entity(Guid id, Clinic entity)
         {
             try
             {

@@ -11,6 +11,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces
     {
         public ICompanyRepository CompanyRepository { get; }
         public IEmployeesRepository EmployeesRepository { get; }
+        public IDepartmentRepository DepartmentRepository { get; }
         public void Commit();
     }
 }

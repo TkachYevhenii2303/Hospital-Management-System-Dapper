@@ -18,30 +18,10 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
         {
         }
 
-        public async Task<IEnumerable<Employees>> Get_all_activity_Employees()
+        public async Task<Services_Repsponse<IEnumerable<Employees>>> Get_all_activity_Employees()
         {
             string query = "Select * From [dbo].Employees Where Active_is = 1";
-            IEnumerable<Employees> result = await _connection.QueryAsync<Employees>(query, transaction: _transaction);
-            return result;
-        }
-
-        public async Task<IEnumerable<Employees>> Get_all_Employees_By_Specialization(string specialization)
-        {
-            string query = "Select a.First_name, a.Last_name, b.Role_name " +
-                           "From Employees a, Role b, Has_Role c " +
-                           $"Where c.Employees_id = a.Id and c.Role_id = b.Id and b.Role_name = '{specialization}'";
-
-            IEnumerable<Employees> result = await _connection.QueryAsync<Employees>(query, transaction: _transaction);
-            return result;
-        }
-
-        public async Task<Employees> Get_By_Name(string name)
-        {
-            string query = "Select a.First_name, a.Last_name" +
-                           "From Employees a" +
-                           $"Where a.First_name = '{name}'";
-
-            var result = await _connection.QueryFirstAsync<Employees>(query, transaction: _transaction);
+            var result = (Services_Repsponse<IEnumerable<Employees>>)await _connection.QueryAsync<Employees>(query, transaction: _transaction);
             return result;
         }
     }
