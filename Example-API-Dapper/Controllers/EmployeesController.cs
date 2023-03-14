@@ -32,7 +32,7 @@ namespace Example_API_Dapper.Controllers
         [HttpGet(Name = "Get all information about Employees")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<Services_Repsponse<IEnumerable<Get_Empoyee_Response_DTO>>>> Get_all_Information()
+        public async Task<ActionResult<Services_Repsponse<IEnumerable<Get_Employee_Response_DTO>>>> Get_all_Information()
         {
             try
             {
@@ -58,7 +58,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Services_Repsponse<Get_Empoyee_Response_DTO>>> Get_by_Id(Guid id)
+        public async Task<ActionResult<Services_Repsponse<Get_Employee_Response_DTO>>> Get_by_Id([FromRoute] Guid id)
         {
             try
             {

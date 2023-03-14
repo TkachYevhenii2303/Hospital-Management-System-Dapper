@@ -9,13 +9,19 @@ using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Microsoft.Data.SqlClient;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
+using AutoMapper;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
     public class EmployeesRepository : RepositoryBase<Employees>, IEmployeesRepository
     {
-        public EmployeesRepository(SqlConnection connection, IDbTransaction transaction) : base(connection, transaction, "Employees")
+        private readonly IMapper _mapper;
+
+        public EmployeesRepository(SqlConnection connection, IDbTransaction transaction, IMapper mapper) 
+            : base(connection, transaction, "Employees")
         {
+            _mapper = mapper;
         }
 
         public async Task<Services_Repsponse<IEnumerable<Employees>>> Get_all_activity_Employees()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO
 {
-    public class Get_Empoyee_Response_DTO
+    public class Get_Employee_Response_DTO
     {
         public Guid Id { get; set; }
 

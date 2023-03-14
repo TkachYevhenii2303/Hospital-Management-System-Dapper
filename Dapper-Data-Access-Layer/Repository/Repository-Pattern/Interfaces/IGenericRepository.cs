@@ -12,7 +12,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces
     {
         public Task<Services_Repsponse<IEnumerable<TEntity>>> Get_all_Information();
         public Task<Services_Repsponse<TEntity>> Get_by_Id(Guid id);
-        public Task<Services_Repsponse<TEntity>> Insert_Entity(TEntity entity);
+        public Task Insert_Entity(TEntity entity);
         public Task Update_Entity(TEntity entity);
         public Task Delete_Entity(Guid id);
     }

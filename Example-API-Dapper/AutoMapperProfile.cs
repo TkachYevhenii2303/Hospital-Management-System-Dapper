@@ -13,8 +13,7 @@ namespace Example_API_Dapper
 
         private void Employees_Mapper()
         {
-            CreateMap<Employees, Get_Empoyee_Response_DTO>();
-            CreateMap<Insert_Employee_Response_DTO, Employees>();
+            CreateMap<Employees, Get_Employee_Response_DTO>();
         }
     }
 }

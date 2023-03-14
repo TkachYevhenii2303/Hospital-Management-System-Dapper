@@ -70,6 +70,8 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
             entity.Created_at = DateTime.Now;
             entity.Updated_at = DateTime.Now;
 
+            var services_Response = new Services_Repsponse<TEntity>();
+
             string query = this.Generate_Insert_Query();
 
             await _connection.ExecuteAsync(query, param: entity, transaction: _transaction);
