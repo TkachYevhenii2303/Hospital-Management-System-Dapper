@@ -12,6 +12,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Example_API_Dapper.Controllers
 {
+    [Produces("application/json")]
     [ApiController]
     [Route("api/employees")]
     public class EmployeesController : ControllerBase
@@ -28,7 +29,9 @@ namespace Example_API_Dapper.Controllers
         /// Get all information about employees in database
         /// </summary>
         /// <returns>The list of all employees in database</returns>
-        [HttpGet]
+        [HttpGet(Name = "Get all information about Employees")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<IEnumerable<Employees>>> Get_all_Information()
         {
             try
@@ -51,7 +54,10 @@ namespace Example_API_Dapper.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Employee object</returns>
-        [HttpGet("Id")]
+        [HttpGet("Id", Name = "Get concrete employee by ID")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get_by_Id(int id)
         {
             try
@@ -83,6 +89,10 @@ namespace Example_API_Dapper.Controllers
         /// <param name="entity"></param>
         /// <returns></returns>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Insert_Entity(Employees entity)
         {
             try
@@ -117,6 +127,10 @@ namespace Example_API_Dapper.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("Id")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> Delete_Entity(int id)
         {
             try
@@ -146,6 +160,10 @@ namespace Example_API_Dapper.Controllers
         /// <param name="entity"></param>
         /// <returns></returns>
         [HttpPut("Id")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update_Entity(int id, Employees entity)
         {
             try
