@@ -1,5 +1,6 @@
 using System.Data;
 using System.Reflection;
+using Bogus;
 using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
@@ -45,7 +46,8 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services
     .AddScoped<IUnit_of_Work, Unit_of_Work>()
     .AddScoped<ICompanyRepository, CompanyRepository>()
-    .AddScoped<IEmployeesRepository, EmployeesRepository>();
+    .AddScoped<IEmployeesRepository, EmployeesRepository>()
+    .AddScoped<IDepartmentRepository, DepartmentRepository>();
 
 
 var app = builder.Build();

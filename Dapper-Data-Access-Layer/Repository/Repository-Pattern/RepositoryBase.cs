@@ -32,10 +32,10 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         /// This method returned the all information about table
         /// </summary>
         /// <returns>IEnumerable(TEntity)></returns>
-        public async Task<Services_Repsponse<IEnumerable<TEntity>>> Get_all_Information()
+        public virtual async Task<IEnumerable<TEntity>> Get_all_Information()
         {
             var query = $"Select * From {_table}";
-            return (Services_Repsponse<IEnumerable<TEntity>>)await _connection.QueryAsync<TEntity>(query, transaction: _transaction);
+            return await _connection.QueryAsync<TEntity>(query, transaction: _transaction);
         }
 
         /// <summary>
@@ -44,11 +44,11 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         /// <param name="id"></param>
         /// <returns>Entity</returns>
         /// <exception cref="KeyNotFoundException"></exception>
-        public async Task<Services_Repsponse<TEntity>> Get_by_Id(Guid id)
+        public async Task<TEntity> Get_by_Id(Guid id)
         {
             string query = $"Select * From {_table} Where Id = @Id";
             var result =
-                await _connection.QuerySingleOrDefaultAsync<Services_Repsponse<TEntity>>(query, param: 
+                await _connection.QuerySingleOrDefaultAsync<TEntity>(query, param: 
                 new { Id = id }, 
                 transaction: _transaction);
 
@@ -69,8 +69,6 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         {
             entity.Created_at = DateTime.Now;
             entity.Updated_at = DateTime.Now;
-
-            var services_Response = new Services_Repsponse<TEntity>();
 
             string query = this.Generate_Insert_Query();
 
@@ -113,7 +111,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
 
         private string Generate_Insert_Query()
         {
-            var builder = new StringBuilder($"SET IDENTITY_INSERT {_table} ON Insert into {_table}");
+            var builder = new StringBuilder($"Insert into {_table}");
             builder.Append(" (");
 
             var properties = List_Properties(Get_Properties);

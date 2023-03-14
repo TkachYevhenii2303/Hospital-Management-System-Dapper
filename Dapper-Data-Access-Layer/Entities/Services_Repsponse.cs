@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    public class Select_Repsponse<TEntity>
+    public class Services_Repsponse<TEntity>
     {
         public TEntity? Data { get; set; }
 
-        public bool Success { get; set; } = true;;
+        public bool Success { get; set; } = true;
 
         public string Message { get; set; } = string.Empty;
     }

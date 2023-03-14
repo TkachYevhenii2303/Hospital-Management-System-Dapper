@@ -10,8 +10,8 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces
 {
     public interface IGenericRepository<TEntity> where TEntity : Entity
     {
-        public Task<Services_Repsponse<IEnumerable<TEntity>>> Get_all_Information();
-        public Task<Services_Repsponse<TEntity>> Get_by_Id(Guid id);
+        public Task<IEnumerable<TEntity>> Get_all_Information();
+        public Task<TEntity> Get_by_Id(Guid id);
         public Task Insert_Entity(TEntity entity);
         public Task Update_Entity(TEntity entity);
         public Task Delete_Entity(Guid id);

@@ -11,23 +11,21 @@ using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Microsoft.Data.SqlClient;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
 using AutoMapper;
+using Bogus;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
     public class EmployeesRepository : RepositoryBase<Employees>, IEmployeesRepository
     {
-        private readonly IMapper _mapper;
-
         public EmployeesRepository(SqlConnection connection, IDbTransaction transaction, IMapper mapper) 
             : base(connection, transaction, "Employees")
         {
-            _mapper = mapper;
         }
 
-        public async Task<Services_Repsponse<IEnumerable<Employees>>> Get_all_activity_Employees()
+        public async Task<IEnumerable<Employees>> Get_all_activity_Employees()
         {
             string query = "Select * From [dbo].Employees Where Active_is = 1";
-            var result = (Services_Repsponse<IEnumerable<Employees>>)await _connection.QueryAsync<Employees>(query, transaction: _transaction);
+            var result = await _connection.QueryAsync<Employees>(query, transaction: _transaction);
             return result;
         }
     }

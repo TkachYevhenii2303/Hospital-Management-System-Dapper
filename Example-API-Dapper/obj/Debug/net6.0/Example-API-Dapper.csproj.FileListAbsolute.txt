@@ -240,3 +240,6 @@ D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.csproj.CopyComplete
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\Example-API-Dapper.genruntimeconfig.cache
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\obj\Debug\net6.0\ref\Example-API-Dapper.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\AutoMapper.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Example-API-Dapper\bin\Debug\net6.0\Bogus.dll
