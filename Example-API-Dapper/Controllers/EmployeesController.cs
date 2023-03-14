@@ -7,6 +7,7 @@ using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Interfaces;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,14 +18,20 @@ namespace Example_API_Dapper.Controllers
     [Route("api/employees")]
     public class EmployeesController : ControllerBase
     {
+        private readonly IEmployeeServices _employee_Services;
         private readonly IUnit_of_Work _unit_of_Work;
         private readonly ILogger _logger;
-        public EmployeesController(IEmployeesRepository employeesRepository, ILogger<CompaniesController> logger, IUnit_of_Work unitOfWork)
+        public EmployeesController(IEmployeesRepository employeesRepository, ILogger<CompaniesController> logger, IUnit_of_Work unitOfWork, 
+            IEmployeeServices employeeServices)
         {
             _logger = logger;
             _unit_of_Work = unitOfWork;
+            _employee_Services = employeeServices;
         }
 
+        //[HttpGet(Name = "Get all inforamation about Employees using Services")]
+        
+        
         /// <summary>
         /// Get all information about employees in database
         /// </summary>

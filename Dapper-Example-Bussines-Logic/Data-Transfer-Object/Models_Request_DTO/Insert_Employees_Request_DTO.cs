@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO
+namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO
 {
-    public class Get_Employee_Response_DTO
+    internal class Insert_Employees_Request_DTO
     {
-        public Guid Id { get; set; }
-
         public string First_name { get; set; } = string.Empty;
         
         public string Last_name { get; set; } = string.Empty;

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dapper_Data_Access_Layer.Entities
+namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
 {
-    public class Services_Repsponse<TEntity>
+    public class Services_Response<TEntity>
     {
         public TEntity? Data { get; set; }
 
