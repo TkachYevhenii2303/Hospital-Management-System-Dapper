@@ -5,12 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_Access_Layer_EF.Models
+namespace Data_Access_Layer_EF.Repositories.Interfaces
 {
-    public class Patients : Entity
+    internal interface IGenericRepository<TEntity> where TEntity : Entity
     {
-        public string First_name { get; set; }
-        
-        public string Last_name { get; set;}
     }
 }

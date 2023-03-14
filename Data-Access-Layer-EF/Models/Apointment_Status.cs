@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer_EF.Models
 {
-    public class Patients : Entity
+    internal class Apointment_Status : Entity 
     {
-        public string First_name { get; set; }
-        
-        public string Last_name { get; set;}
+        public string Status_name { get; set; }
     }
 }

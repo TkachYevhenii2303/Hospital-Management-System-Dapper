@@ -40,6 +40,7 @@ builder.Services.AddScoped<IDbTransaction>(s =>
     return connection.BeginTransaction();
 });
 
+
 // Dependency Injections 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
