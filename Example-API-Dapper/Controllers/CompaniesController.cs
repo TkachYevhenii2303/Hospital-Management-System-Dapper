@@ -92,7 +92,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Insert_Entity(Clinic entity)
+        public async Task<ActionResult> Insert_Entity(Clinic entity)
         {
             try
             {

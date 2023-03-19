@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8IXGNYJZaEeLxweF7hNdXuQvgLNUgfPkCB5rM2/2H4cWCVc7eMdYBIOOjfdcYWPfdRvSJ+4Qp6kJ/1nM8qovzQ==",
+  "dgSpecHash": "51BhRsMCfZz+zPsuUXgHIFYQ1aSv4TO5BBBjp8ZvjaC0ds0mNdHJP3X2Kja5++B/8/s7lPk3K6JRj1r9MpHj4g==",
   "success": true,
   "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj",
   "expectedPackageFiles": [

@@ -8,6 +8,7 @@ namespace Data_Access_Layer_EF.Base_Model
 {
     public class Entity
     {
+
         public Guid Id { get; set; } = Guid.NewGuid();
         
         public virtual DateTime? Created_at { get; set; } = DateTime.Now;

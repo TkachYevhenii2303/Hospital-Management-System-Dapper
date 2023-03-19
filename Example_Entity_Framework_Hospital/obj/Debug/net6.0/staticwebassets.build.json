@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5xJRHJMfgB8hipgkVcCCtW8Oo5Tpz29IebS3WX6IdYc=",
+  "Source": "Example_Entity_Framework_Hospital",
+  "BasePath": "_content/Example_Entity_Framework_Hospital",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

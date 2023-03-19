@@ -10,6 +10,6 @@ namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Interfaces
 {
     public interface IEmployeeServices
     {
-        public Task<Services_Response<IEnumerable<Get_Employee_Response_DTO>>> Get_all_Employees();
+        //public Task<Services_Response<IEnumerable<Get_Employee_Response_DTO>>> Get_all_Employees();
     }
 }
