@@ -6,6 +6,8 @@ using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Interfaces;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -48,7 +50,8 @@ builder.Services
     .AddScoped<IUnit_of_Work, Unit_of_Work>()
     .AddScoped<ICompanyRepository, CompanyRepository>()
     .AddScoped<IEmployeesRepository, EmployeesRepository>()
-    .AddScoped<IDepartmentRepository, DepartmentRepository>();
+    .AddScoped<IDepartmentRepository, DepartmentRepository>()
+    .AddScoped<IEmployeeServices, EmployeeServices>();
 
 var app = builder.Build();
 

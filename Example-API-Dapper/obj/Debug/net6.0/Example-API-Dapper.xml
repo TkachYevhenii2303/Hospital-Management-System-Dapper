@@ -74,5 +74,18 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
+        <member name="M:Example_API_Dapper.Controllers.Employees_ServicesController.Insert_Employee(Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Insert_Employees_Request_DTO)">
+            <summary>
+            Insert new employee using Services DTO
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.Employees_ServicesController.Get_all_Employees">
+            <summary>
+            Get all Employees from the table using Services!
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

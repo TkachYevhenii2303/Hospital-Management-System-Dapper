@@ -23,5 +23,10 @@ namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO
         public string? Mobile_number { get; set; }
         
         public bool Active_is { get; set; }
+
+        public virtual DateTime? Created_at { get; set; } = DateTime.Now;
+
+        public virtual DateTime? Updated_at { get; set; } = DateTime.Now;
+
     }
 }

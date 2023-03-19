@@ -353,3 +353,34 @@ Create table [Documents]
 )
 Go
 
+Insert into dbo.Role ([Role_name]) values (N'The Surgeon');
+Insert into dbo.Role ([Role_name]) values (N'Dermatologists');
+Insert into dbo.Role ([Role_name]) values (N'Ophthalmologists');
+Insert into dbo.Role ([Role_name]) values (N'Cardiologists');
+Insert into dbo.Role ([Role_name]) values (N'Geriatric Medicine');
+
+Insert into dbo.Employees ([First_name], [Last_name], [User_name], [Active_is], [Email], [Mobile_number], [Phone_number], [Password])
+Values ('Emily', 'Rodriguez', 'erodriguez', 1, 'emily.rodriguez@example.com', '+1-555-876-5432', '+1-555-123-4567', 'C0mpl3xP@ssw0rd123!');
+
+Insert into dbo.Employees ([First_name], [Last_name], [User_name], [Active_is], [Email], [Mobile_number], [Phone_number], [Password]) Values 
+('James', 'Brown', 'jbrown', 0, 'james.brown@example.com', '+44-7911-123456', '+44-20-7123-4567', 'P@ssw0rd123!'),
+('Isabella', 'Garcia', 'igarcia', 1, 'isabella.garcia@example.com', '+1-555-234-5678', '+1-555-876-5432', 'S3cur3P@ssword!'),
+('Jacob', 'Hernandez', 'jhernandez', 1, 'jacob.hernandez@example.com', '+1-555-345-6789', '+1-555-234-5678', 'MyP@ssw0rd!'),
+('Sophia', 'Lopez', 'slopez', 1, 'sophia.lopez@example.com', '+44-7911-234567', '+44-20-7123-5678', 'P@ssw0rd!123');
+
+
+Insert into dbo.Has_Role ([Role_id], [Employees_id], [Active_is], [Time_from], [Time_to]) 
+Values ((Select top 1 Id From dbo.Role Order by NEWID()), (Select top 1 Id From dbo.Employees Order by NEWID()), 1, '2008-11-11', '2022-12-08');
+
+Insert into dbo.Has_Role ([Role_id], [Employees_id], [Active_is], [Time_from], [Time_to]) 
+Values ((Select top 1 Id From dbo.Role Order by NEWID()), (Select top 1 Id From dbo.Employees Order by NEWID()), 0, '2009-11-11', '2022-12-08');
+
+Insert into dbo.Has_Role ([Role_id], [Employees_id], [Active_is], [Time_from], [Time_to]) 
+Values ((Select top 1 Id From dbo.Role Order by NEWID()), (Select top 1 Id From dbo.Employees Order by NEWID()), 1, '2010-11-11', '2022-10-11');
+
+Insert into dbo.Has_Role ([Role_id], [Employees_id], [Active_is], [Time_from], [Time_to]) 
+Values ((Select top 1 Id From dbo.Role Order by NEWID()), (Select top 1 Id From dbo.Employees Order by NEWID()), 0, '2011-11-11', '2023-12-08');
+
+Insert into dbo.Has_Role ([Role_id], [Employees_id], [Active_is], [Time_from], [Time_to]) 
+Values ((Select top 1 Id From dbo.Role Order by NEWID()), (Select top 1 Id From dbo.Employees Order by NEWID()), 1, '2012-11-11', '2025-12-08');
+

@@ -7,7 +7,9 @@ using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Interfaces;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,20 +20,14 @@ namespace Example_API_Dapper.Controllers
     [Route("api/employees")]
     public class EmployeesController : ControllerBase
     {
-        private readonly IEmployeeServices _employee_Services;
         private readonly IUnit_of_Work _unit_of_Work;
         private readonly ILogger _logger;
-        public EmployeesController(IEmployeesRepository employeesRepository, ILogger<CompaniesController> logger, IUnit_of_Work unitOfWork, 
-            IEmployeeServices employeeServices)
+        public EmployeesController(ILogger<CompaniesController> logger, IUnit_of_Work unitOfWork)
         {
             _logger = logger;
             _unit_of_Work = unitOfWork;
-            _employee_Services = employeeServices;
         }
 
-        //[HttpGet(Name = "Get all inforamation about Employees using Services")]
-        
-        
         /// <summary>
         /// Get all information about employees in database
         /// </summary>
@@ -39,7 +35,7 @@ namespace Example_API_Dapper.Controllers
         [HttpGet(Name = "Get all information about Employees")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<Get_Employee_Response_DTO>>> Get_all_Information()
+        public async Task<ActionResult<IEnumerable<Employees>>> Get_all_Information()
         {
             try
             {
@@ -65,7 +61,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Get_Employee_Response_DTO>> Get_by_Id([FromRoute] Guid id)
+        public async Task<ActionResult<Employees>> Get_by_Id(Guid id)
         {
             try
             {
