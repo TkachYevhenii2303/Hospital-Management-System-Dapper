@@ -9,10 +9,10 @@ namespace Data_Access_Layer_EF.Base_Model
     public class Entity
     {
 
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
         
-        public virtual DateTime? Created_at { get; set; } = DateTime.Now;
+        public virtual DateTime? Created_at { get; set; }
         
-        public virtual DateTime? Updated_at { get; set; } = DateTime.Now;
+        public virtual DateTime? Updated_at { get; set; }
     }
 }
