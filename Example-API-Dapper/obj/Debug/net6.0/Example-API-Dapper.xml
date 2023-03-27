@@ -66,7 +66,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Update_Entity(Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Employees_Services_DTO.Update_Employees_Request_DTO)">
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Update_Entity(Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Update_Employees_Request_DTO)">
             <summary>
             Method for updating some entity
             </summary>

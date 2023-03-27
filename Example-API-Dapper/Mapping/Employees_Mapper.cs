@@ -2,7 +2,6 @@
 using Dapper_Data_Access_Layer.Entities;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO;
-using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Employees_Services_DTO;
 
 namespace Example_API_Dapper.Mapping
 {

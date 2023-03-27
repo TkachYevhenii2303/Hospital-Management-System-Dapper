@@ -12,7 +12,6 @@ using Microsoft.Data.SqlClient;
 using Dapper;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Dapper_Data_Access_Layer.Entities;
-using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Employees_Services_DTO;
 
 namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
 {
