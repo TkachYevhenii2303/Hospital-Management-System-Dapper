@@ -10,30 +10,33 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Dapper;
+using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
+using Dapper_Data_Access_Layer.Entities;
 
 namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
 {
     public class EmployeeServices : IEmployeeServices
     {
-        protected SqlConnection _connection;
-        
-        protected IDbTransaction _transaction;
+        private readonly IUnit_of_Work _unit_Of_Work;
 
-        public EmployeeServices(IDbTransaction transaction, SqlConnection connection)
+        private readonly IMapper _mapper;
+
+        public EmployeeServices(IUnit_of_Work unit_Of_Work, IMapper mapper)
         {
-            _transaction = transaction;
-            _connection = connection;
+            this._unit_Of_Work = unit_Of_Work;
+            _mapper = mapper;
         }
 
         public async Task<IEnumerable<Get_Employee_Response_DTO>> Get_all_Employees()
         {
             string query = "Select * From Employees";
 
-            return await _connection.QueryAsync<Get_Employee_Response_DTO>
-                (query, transaction: _transaction);
+            var result = await _unit_Of_Work.EmployeesRepository.Get_all_Information();
+
+            return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
         }
 
-        public async Task<Get_Employee_Response_DTO> Insert_Employee(Insert_Employees_Request_DTO entity)
+        /*public async Task<Get_Employee_Response_DTO> Insert_Employee(Insert_Employees_Request_DTO entity)
         {
             entity.Created_at = DateTime.Now;
 
@@ -56,6 +59,6 @@ namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
 
             return (Get_Employee_Response_DTO)await _connection.QueryAsync<Get_Employee_Response_DTO>
                 (query, parameters, transaction: _transaction);
-        }
+        }*/
     }
 }

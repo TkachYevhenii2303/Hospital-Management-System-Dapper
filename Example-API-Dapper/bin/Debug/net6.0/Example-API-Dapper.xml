@@ -45,47 +45,5 @@
             </summary>
             <returns>The list of all employees in database</returns>
         </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_by_Id(System.Guid)">
-            <summary>
-            Get the concrete employee by id 
-            </summary>
-            <param name="id"></param>
-            <returns>Employee object</returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Insert_Entity(Dapper_Data_Access_Layer.Entities.Employees)">
-            <summary>
-            Method for the Insert new Entity to the Employee List
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Delete_Entity(System.Guid)">
-            <summary>
-            Method for the Deleting the entity by Id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Update_Entity(System.Guid,Dapper_Data_Access_Layer.Entities.Employees)">
-            <summary>
-            Method for updating some entity
-            </summary>
-            <param name="id"></param>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.Employees_ServicesController.Insert_Employee(Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Insert_Employees_Request_DTO)">
-            <summary>
-            Insert new employee using Services DTO
-            </summary>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Example_API_Dapper.Controllers.Employees_ServicesController.Get_all_Employees">
-            <summary>
-            Get all Employees from the table using Services!
-            </summary>
-            <returns></returns>
-        </member>
     </members>
 </doc>
