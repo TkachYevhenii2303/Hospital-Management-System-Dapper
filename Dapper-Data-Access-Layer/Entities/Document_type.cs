@@ -9,6 +9,6 @@ namespace Dapper_Data_Access_Layer.Entities
 {
     public class Document_type : Entity
     {
-        public string Type_name { get; set; }
+        public string Type_name { get; set; } = String.Empty;
     }
 }

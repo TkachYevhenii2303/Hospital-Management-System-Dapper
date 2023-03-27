@@ -17,12 +17,5 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts
         public DepartmentRepository(SqlConnection connection, IDbTransaction transaction) : base(connection, transaction, "Department")
         {
         }
-
-        public async Task<IEnumerable<Department>> Get_five_Departments()
-        {
-            var query = "Select top 5 * From Department";
-            var result = await _connection.QueryAsync<Department>(query, transaction: _transaction);
-            return result;
-        }
     }
 }

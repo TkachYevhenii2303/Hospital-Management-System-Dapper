@@ -9,6 +9,6 @@ namespace Dapper_Data_Access_Layer.Entities
 {
     public class Appointment_Status : Entity
     {
-        public string Status_Name { get; set; }
+        public string Status_Name { get; set; } = String.Empty;
     }
 }

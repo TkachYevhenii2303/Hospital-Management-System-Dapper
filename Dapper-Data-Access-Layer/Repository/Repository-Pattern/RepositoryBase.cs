@@ -65,7 +65,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task Insert_Entity(TEntity entity)
+        public async Task<IEnumerable<TEntity>> Insert_Entity(TEntity entity)
         {
             entity.Created_at = DateTime.Now;
             entity.Updated_at = DateTime.Now;
@@ -73,6 +73,8 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
             string query = this.Generate_Insert_Query();
 
             await _connection.ExecuteAsync(query, param: entity, transaction: _transaction);
+
+            return await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
         }
 
         /// <summary>
@@ -80,7 +82,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public async Task Update_Entity(TEntity entity)
+        public async Task<IEnumerable<TEntity>> Update_Entity(TEntity entity)
         {
             entity.Created_at = DateTime.Now;
             entity.Updated_at = DateTime.Now;
@@ -88,6 +90,8 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
             string query = this.Generate_Update_Query();
 
             await _connection.ExecuteAsync(query, param: entity, transaction: _transaction);
+
+            return await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
         }
 
         /// <summary>
@@ -95,10 +99,12 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task Delete_Entity(Guid id)
+        public async Task<IEnumerable<TEntity>> Delete_Entity(Guid id)
         {
             string query = $"Delete from {_table} where Id = @Id";
             await _connection.ExecuteAsync(query, new { Id = id }, transaction: _transaction);
+
+            return await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
         }
 
         private IEnumerable<PropertyInfo> Get_Properties => typeof(TEntity).GetProperties();

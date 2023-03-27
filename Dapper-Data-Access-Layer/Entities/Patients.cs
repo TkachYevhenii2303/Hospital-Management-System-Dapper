@@ -9,8 +9,8 @@ namespace Dapper_Data_Access_Layer.Entities
 {
     public class Patients : Entity
     {
-        public string First_name { get; set; }
+        public string First_name { get; set; } = String.Empty;
         
-        public string Last_name { get; set;}
+        public string Last_name { get; set; } = String.Empty; 
     }
 }

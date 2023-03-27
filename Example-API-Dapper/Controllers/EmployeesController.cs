@@ -8,6 +8,7 @@ using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Employees_Services_DTO;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Interfaces;
 using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models;
 using Microsoft.AspNetCore.Components.Forms;
@@ -30,10 +31,10 @@ namespace Example_API_Dapper.Controllers
         }
 
         /// <summary>
-        /// Get all information about employees in database
+        /// Get all information about employees in database using services
         /// </summary>
         /// <returns>The list of all employees in database</returns>
-        [HttpGet(Name = "Get all information about Employees")]
+        [HttpGet(Name = "Get_information_Employees")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<IEnumerable<Get_Employee_Response_DTO>>> Get_all_Information()
@@ -52,21 +53,20 @@ namespace Example_API_Dapper.Controllers
             }
         }
 
-       /* /// <summary>
+        /// <summary>
         /// Get the concrete employee by id 
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Employee object</returns>
-        [HttpGet("Id", Name = "Get concrete employee by ID")]
+        [HttpGet("Id", Name = "Get_Employee_ID")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<Employees>> Get_by_Id(Guid id)
+        public async Task<ActionResult<Get_Employee_Response_DTO>> Get_by_Id(Guid id)
         {
             try
             {
-                var result = await _unit_of_Work.EmployeesRepository.Get_by_Id(id);
-                _unit_of_Work.Commit();
+                var result = await _employee_Services.Get_Employee_ID(id);
 
                 if (result == null)
                 {
@@ -96,7 +96,7 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Insert_Entity(Employees entity)
+        public async Task<ActionResult<IEnumerable<Get_Employee_Response_DTO>>> Insert_Entity(Insert_Employees_Request_DTO entity)
         {
             try
             {
@@ -112,10 +112,9 @@ namespace Example_API_Dapper.Controllers
                     return BadRequest("The event object is invalid");
                 }
 
-                await _unit_of_Work.EmployeesRepository.Insert_Entity(entity);
-                _unit_of_Work.Commit();
-
-                return StatusCode(StatusCodes.Status201Created);
+                var result = await _employee_Services.Insert_Employee(entity);
+                return Ok(result);
+                
             }
             catch (Exception exception)
             {
@@ -133,21 +132,21 @@ namespace Example_API_Dapper.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete_Entity(Guid id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<Get_Employee_Response_DTO>>> Delete_Entity(Guid id)
         {
             try
             {
-                var result = await _unit_of_Work.EmployeesRepository.Get_by_Id(id);
-                if (result == null)
+                var entity = await _employee_Services.Get_Employee_ID(id);
+                if (entity == null)
                 {
                     _logger.LogInformation($"The model with Id: {id} was not found in the database!");
                     return NotFound();
                 }
 
-                await _unit_of_Work.EmployeesRepository.Delete_Entity(id);
-                _unit_of_Work.Commit();
-                return StatusCode(StatusCodes.Status204NoContent);
+                var result = await _employee_Services.Delete_Employees(id);
+
+                return Ok(result);
             }
             catch (Exception exception)
             {
@@ -159,15 +158,14 @@ namespace Example_API_Dapper.Controllers
         /// <summary>
         /// Method for updating some entity
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        [HttpPut("Id")]
+        [HttpPut]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Update_Entity(Guid id, Employees entity)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<Get_Employee_Response_DTO>>> Update_Entity(Update_Employees_Request_DTO entity)
         {
             try
             {
@@ -183,24 +181,21 @@ namespace Example_API_Dapper.Controllers
                     return BadRequest("The event object is invalid");
                 }
 
-                var result = await _unit_of_Work.EmployeesRepository.Get_by_Id(id);
+                var result = await _employee_Services.Get_Employee_ID(entity.Id);
 
                 if (result == null)
                 {
-                    _logger.LogInformation($"The model with Id: {id} was not found in the database!");
+                    _logger.LogInformation($"The model with Id: {entity.Id} was not found in the database!");
                     return NotFound();
                 }
 
-                await _unit_of_Work.EmployeesRepository.Update_Entity(entity);
-                _unit_of_Work.Commit();
-                return StatusCode(StatusCodes.Status204NoContent);
-
+                return Ok(await _employee_Services.Update_Employee(entity));
             }
             catch (Exception exception)
             {
                 _logger.LogError($"The transaction failed. An error occurred in the {this.GetType().Name} model!");
                 return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
-        }*/
+        }
     }
 }

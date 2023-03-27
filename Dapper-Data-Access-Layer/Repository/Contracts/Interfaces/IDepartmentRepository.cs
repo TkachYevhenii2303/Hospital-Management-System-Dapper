@@ -10,6 +10,5 @@ namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
 {
     public interface IDepartmentRepository : IGenericRepository<Department>
     {
-        public Task<IEnumerable<Department>> Get_five_Departments();
     }
 }

@@ -41,9 +41,37 @@
         </member>
         <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_all_Information">
             <summary>
-            Get all information about employees in database
+            Get all information about employees in database using services
             </summary>
             <returns>The list of all employees in database</returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_by_Id(System.Guid)">
+            <summary>
+            Get the concrete employee by id 
+            </summary>
+            <param name="id"></param>
+            <returns>Employee object</returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Insert_Entity(Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Insert_Employees_Request_DTO)">
+            <summary>
+            Method for the Insert new Entity to the Employee List
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Delete_Entity(System.Guid)">
+            <summary>
+            Method for the Deleting the entity by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Example_API_Dapper.Controllers.EmployeesController.Update_Entity(Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Employees_Services_DTO.Update_Employees_Request_DTO)">
+            <summary>
+            Method for updating some entity
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

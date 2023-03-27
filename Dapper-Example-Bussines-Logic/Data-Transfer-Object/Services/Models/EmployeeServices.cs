@@ -12,6 +12,7 @@ using Microsoft.Data.SqlClient;
 using Dapper;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Dapper_Data_Access_Layer.Entities;
+using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Models_Request_DTO.Employees_Services_DTO;
 
 namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
 {
@@ -27,38 +28,51 @@ namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Get_Employee_Response_DTO>> Get_all_Employees()
+        // Deleting some Entity using ID!
+        public async Task<IEnumerable<Get_Employee_Response_DTO>> Delete_Employees(Guid Id)
         {
-            string query = "Select * From Employees";
+            var result = await _unit_Of_Work.EmployeesRepository.Delete_Entity(Id);
 
-            var result = await _unit_Of_Work.EmployeesRepository.Get_all_Information();
+            _unit_Of_Work.Commit();
 
             return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
         }
 
-        /*public async Task<Get_Employee_Response_DTO> Insert_Employee(Insert_Employees_Request_DTO entity)
+        // Method for get all employee from database using Services to access to Employee Repository
+        public async Task<IEnumerable<Get_Employee_Response_DTO>> Get_all_Employees()
         {
-            entity.Created_at = DateTime.Now;
+            var result = await _unit_Of_Work.EmployeesRepository.Get_all_Information();
 
-            entity.Updated_at = DateTime.Now;
+            // Using Mapping Collection-to-Collection
+            return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
+        }
 
-            string query = "Insert into dbo.Employees ([First_name], [Last_name], [User_name], " +
-                "[Active_is], [Email], [Mobile_number], [Phone_number], [Password]) Values " +
-                "(@[First_name], @[Last_name], @[User_name], @[Active_is], @[Email], @[Mobile_number], @[Phone_number], @[Password])";
+        // Creating method for get the employee by Id as parameter and map it to Get_Employee_Object
+        public async Task<Get_Employee_Response_DTO> Get_Employee_ID(Guid Id)
+        {
+            var result = await _unit_Of_Work.EmployeesRepository.Get_by_Id(Id);
 
-            var parameters = new DynamicParameters();
-            parameters.Add("[First_name]", entity.First_name, DbType.String);
-            parameters.Add("[Last_name]", entity.Last_name, DbType.String);
-            parameters.Add("[User_name]", entity.User_name, DbType.String);
-            parameters.Add("[Active_is]", entity.Active_is, DbType.Boolean);
-            parameters.Add("[Email]", entity.Email, DbType.String);
-            parameters.Add("[Mobile_number]", entity.Mobile_number, DbType.String);
-            parameters.Add("[Phone_number]", entity.Phone_number, DbType.String);
-            parameters.Add("[Password]", entity.Password, DbType.String);
+            return _mapper.Map<Get_Employee_Response_DTO>(result);
+        }
 
+        // Insert the entity to the database using AutoMapper!
+        public async Task<IEnumerable<Get_Employee_Response_DTO>> Insert_Employee(Insert_Employees_Request_DTO entity)
+        {
+            var result = await _unit_Of_Work.EmployeesRepository.Insert_Entity(_mapper.Map<Employees>(entity));
 
-            return (Get_Employee_Response_DTO)await _connection.QueryAsync<Get_Employee_Response_DTO>
-                (query, parameters, transaction: _transaction);
-        }*/
+            _unit_Of_Work.Commit(); 
+
+            return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
+        }
+
+        // Update entity by Id in Insert List
+        public async Task<IEnumerable<Get_Employee_Response_DTO>> Update_Employee(Update_Employees_Request_DTO entity)
+        {
+            var result = await _unit_Of_Work.EmployeesRepository.Update_Entity(_mapper.Map<Employees>(entity));
+
+            _unit_Of_Work.Commit();
+
+            return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
+        }
     }
 }
