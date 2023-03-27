@@ -45,7 +45,6 @@ builder.Services.AddScoped<IDbTransaction>(s =>
 // Dependency Injections 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
-
 builder.Services
     .AddScoped<IUnit_of_Work, Unit_of_Work>()
     .AddScoped<ICompanyRepository, CompanyRepository>()

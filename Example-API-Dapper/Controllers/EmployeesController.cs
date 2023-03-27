@@ -20,12 +20,13 @@ namespace Example_API_Dapper.Controllers
     [Route("api/employees")]
     public class EmployeesController : ControllerBase
     {
-        private readonly IUnit_of_Work _unit_of_Work;
+        private readonly IEmployeeServices _employee_Services;
         private readonly ILogger _logger;
-        public EmployeesController(ILogger<CompaniesController> logger, IUnit_of_Work unitOfWork)
+
+        public EmployeesController(ILogger<CompaniesController> logger, IEmployeeServices employee_Services)
         {
             _logger = logger;
-            _unit_of_Work = unitOfWork;
+            _employee_Services = employee_Services;
         }
 
         /// <summary>
@@ -35,12 +36,11 @@ namespace Example_API_Dapper.Controllers
         [HttpGet(Name = "Get all information about Employees")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<Employees>>> Get_all_Information()
+        public async Task<ActionResult<IEnumerable<Get_Employee_Response_DTO>>> Get_all_Information()
         {
             try
             {
-                var result = await _unit_of_Work.EmployeesRepository.Get_all_Information();
-                _unit_of_Work.Commit();
+                var result = await _employee_Services.Get_all_Employees();
                 _logger.LogInformation($"Received all events from the database! {this.GetType().Name} model!");
                 return Ok(result);
 
@@ -52,7 +52,7 @@ namespace Example_API_Dapper.Controllers
             }
         }
 
-        /// <summary>
+       /* /// <summary>
         /// Get the concrete employee by id 
         /// </summary>
         /// <param name="id"></param>
@@ -201,6 +201,6 @@ namespace Example_API_Dapper.Controllers
                 _logger.LogError($"The transaction failed. An error occurred in the {this.GetType().Name} model!");
                 return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
-        }
+        }*/
     }
 }

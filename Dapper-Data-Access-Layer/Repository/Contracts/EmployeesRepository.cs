@@ -9,7 +9,6 @@ using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Microsoft.Data.SqlClient;
-using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Employees_Response_DTO;
 using AutoMapper;
 using Bogus;
 
