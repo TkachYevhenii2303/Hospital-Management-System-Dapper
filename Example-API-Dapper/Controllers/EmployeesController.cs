@@ -52,7 +52,7 @@ namespace Example_API_Dapper.Controllers
             }
         }
 
-        /// <summary>
+       /* /// <summary>
         /// Get the concrete employee by id 
         /// </summary>
         /// <param name="id"></param>
@@ -195,6 +195,6 @@ namespace Example_API_Dapper.Controllers
                 _logger.LogError($"The transaction failed. An error occurred in the {this.GetType().Name} model!");
                 return StatusCode(StatusCodes.Status500InternalServerError, exception.Message);
             }
-        }
+        }*/
     }
 }

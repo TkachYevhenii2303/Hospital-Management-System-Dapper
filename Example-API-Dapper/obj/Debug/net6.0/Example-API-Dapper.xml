@@ -45,6 +45,7 @@
             </summary>
             <returns>The list of all employees in database</returns>
         </member>
+<<<<<<< HEAD
         <member name="M:Example_API_Dapper.Controllers.EmployeesController.Get_by_Id(System.Guid)">
             <summary>
             Get the concrete employee by id 
@@ -73,5 +74,7 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
+=======
+>>>>>>> 118e8dcef921536770ffbbcf6d4d185c0b971956
     </members>
 </doc>
