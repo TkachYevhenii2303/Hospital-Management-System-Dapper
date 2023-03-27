@@ -42,21 +42,12 @@ namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
         {
             var result = await _unit_Of_Work.EmployeesRepository.Get_all_Information();
 
-<<<<<<< HEAD
             // Using Mapping Collection-to-Collection
             return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
         }
 
         // Creating method for get the employee by Id as parameter and map it to Get_Employee_Object
         public async Task<Get_Employee_Response_DTO> Get_Employee_ID(Guid Id)
-=======
-            var result = await _unit_Of_Work.EmployeesRepository.Get_all_Information();
-
-            return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
-        }
-
-        /*public async Task<Get_Employee_Response_DTO> Insert_Employee(Insert_Employees_Request_DTO entity)
->>>>>>> 118e8dcef921536770ffbbcf6d4d185c0b971956
         {
             var result = await _unit_Of_Work.EmployeesRepository.Get_by_Id(Id);
 
@@ -73,7 +64,6 @@ namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
             return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
         }
 
-<<<<<<< HEAD
         // Update entity by Id in Insert List
         public async Task<IEnumerable<Get_Employee_Response_DTO>> Update_Employee(Update_Employees_Request_DTO entity)
         {
@@ -83,10 +73,5 @@ namespace Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models
 
             return _mapper.Map<IEnumerable<Employees>, IEnumerable<Get_Employee_Response_DTO>>(result);
         }
-=======
-            return (Get_Employee_Response_DTO)await _connection.QueryAsync<Get_Employee_Response_DTO>
-                (query, parameters, transaction: _transaction);
-        }*/
->>>>>>> 118e8dcef921536770ffbbcf6d4d185c0b971956
     }
 }
