@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer_EF.Repositories.Interfaces
 {
-    internal interface IGenericRepository<TEntity> where TEntity : Entity
+    public interface IGenericRepository<TEntity> where TEntity : Entity
     {
     }
 }

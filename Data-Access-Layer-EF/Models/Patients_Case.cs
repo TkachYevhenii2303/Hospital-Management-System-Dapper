@@ -2,15 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Data_Access_Layer_EF.Models
 {
-    internal class Patients_Case : Entity 
+    public class Patients_Case : Entity 
     {
-        public Guid Patients_Id { get; set; }
-        
         public DateTime Start_time { get; set; }
         
         public DateTime End_time { get; set;}
@@ -20,5 +19,11 @@ namespace Data_Access_Layer_EF.Models
         public decimal Total_Cost { get; set; }
 
         public decimal Amound_Paid { get; set; }
+
+        public Patients Patients { get; set; }
+
+        public ICollection<Appointment> Appointments { get; set; }  
+
+        public ICollection<Documents> Documents { get; set; }
     }
 }

@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer_EF.Models
 {
-    internal class Apointment_Status : Entity 
+    public class Apointment_Status : Entity 
     {
-        [Required(ErrorMessage = "Name is required")]
+        [Required]
         public string Status_name { get; set; }
+
+        public ICollection<Appointment> Appointments { get; set; }
     }
 }

@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer_EF.Models
 {
-    internal class Appointment : Entity
+    public class Appointment : Entity
     {
-        public Guid Patient_Case_Id { get; set; }
-
-        public Guid In_Department_Id { get; set; }
-
         public DateTime Appointment_Start_time { get; set; }
 
         public DateTime Appointment_End_time { get; set; }
 
-        public Guid Appointment_Status_Id { get; set; }
+        public In_Department In_Department { get; set; }
+
+        public Patients_Case Patients_Case { get; set; }
+
+        public ICollection<Documents> Documents { get; set; }
+
+        public ICollection<Apointment_Status> Apointment_Status { get; set; }
+
     }
 }

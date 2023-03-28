@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer_EF.Repositories
 {
-    internal class GenericRepository
+    public class GenericRepository
     {
     }
 }
