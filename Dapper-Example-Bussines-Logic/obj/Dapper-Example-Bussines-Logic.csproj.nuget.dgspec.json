@@ -4,12 +4,12 @@
     "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj": {}
   },
   "projects": {
-    "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj": {
+    "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_System_DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj",
-        "projectName": "Dapper-Data-Access-Layer",
-        "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj",
+        "projectUniqueName": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_System_DAL.csproj",
+        "projectName": "Hospital_System_DAL",
+        "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_System_DAL.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
         "outputPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\obj\\",
         "projectStyle": "PackageReference",
@@ -121,8 +121,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj": {
-                "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj"
+              "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_System_DAL.csproj": {
+                "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_System_DAL.csproj"
               }
             }
           }

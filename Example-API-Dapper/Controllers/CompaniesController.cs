@@ -35,8 +35,8 @@ namespace Example_API_Dapper.Controllers
         {
             try
             {
-                var result = await _unit_of_Work.CompanyRepository.Get_all_Information();
-                _unit_of_Work.Commit();
+                var result = await _unit_of_Work.Company_Repository.Get_all_Information();
+                _unit_of_Work.Complete();
                 _logger.LogInformation($"Received all events from the database! {this.GetType().Name} model!");
                 return Ok(result);
 
@@ -61,8 +61,8 @@ namespace Example_API_Dapper.Controllers
         {
             try
             {
-                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
-                _unit_of_Work.Commit();
+                var result = await _unit_of_Work.Company_Repository.Get_by_Id(id);
+                _unit_of_Work.Complete();
 
                 if (result == null)
                 {
@@ -108,8 +108,8 @@ namespace Example_API_Dapper.Controllers
                     return BadRequest("The event object is invalid");
                 }
 
-                await _unit_of_Work.CompanyRepository.Insert_Entity(entity);
-                _unit_of_Work.Commit();
+                await _unit_of_Work.Company_Repository.Insert_Entity(entity);
+                _unit_of_Work.Complete();
 
                 return StatusCode(StatusCodes.Status201Created);
             }
@@ -134,15 +134,15 @@ namespace Example_API_Dapper.Controllers
         {
             try
             {
-                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+                var result = await _unit_of_Work.Company_Repository.Get_by_Id(id);
                 if (result == null)
                 {
                     _logger.LogInformation($"The model with Id: {id} was not found in the database!");
                     return NotFound();
                 }
 
-                await _unit_of_Work.CompanyRepository.Delete_Entity(id);
-                _unit_of_Work.Commit();
+                await _unit_of_Work.Company_Repository.Delete_Entity(id);
+                _unit_of_Work.Complete();
                 return StatusCode(StatusCodes.Status204NoContent);
             }
             catch (Exception exception)
@@ -179,7 +179,7 @@ namespace Example_API_Dapper.Controllers
                     return BadRequest("The event object is invalid");
                 }
 
-                var result = await _unit_of_Work.CompanyRepository.Get_by_Id(id);
+                var result = await _unit_of_Work.Company_Repository.Get_by_Id(id);
                 
                 if (result == null)
                 {
@@ -187,8 +187,8 @@ namespace Example_API_Dapper.Controllers
                     return NotFound();
                 }
 
-                await _unit_of_Work.CompanyRepository.Update_Entity(entity);
-                _unit_of_Work.Commit();
+                await _unit_of_Work.Company_Repository.Update_Entity(entity);
+                _unit_of_Work.Complete();
                 return StatusCode(StatusCodes.Status204NoContent);
 
             }

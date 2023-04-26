@@ -13,11 +13,11 @@ namespace Dapper_Data_Access_Layer.Entities
 
         public string Document_Name { get; set; } = String.Empty;
 
-        public Guid Document_type_Id { get; set; }
-
         public string Document_link { get; set; } = String.Empty;
 
         public string Document_Details { get; set; } = String.Empty;
+        
+        public Guid Document_type_Id { get; set; }
 
         public Guid Patients_Id { get; set; }
         

@@ -15,10 +15,10 @@ namespace Dapper_Data_Access_Layer.Entities
 
         public DateTime End_time { get; set;}
 
-        public bool In_Progress { get; set; }
+        public bool In_Progress { get; set; } = true;
 
-        public decimal Total_Cost { get; set; }
+        public decimal Total_Cost { get; set; } = decimal.Zero;
 
-        public decimal Amound_Paid { get; set; }
+        public decimal Amound_Paid { get; set; } = decimal.Zero;
     }
 }

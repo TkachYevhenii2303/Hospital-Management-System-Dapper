@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9gKG4mGWOg5VZBup9nLavmNYq03vXHDIvbvES+2V7+nRcYUOWhxf/QM+vlpwRM5kAheHQcvABtTjMBfdLoPZwA==",
+  "dgSpecHash": "htTjbhDMO+BtplD9twbVL7/von2bf7Wv4QRQYBevRb/hPh60BcukDTm/+mEdRM7sGtJRmnpYOSyhPIfNv5Dv6w==",
   "success": true,
-  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj",
+  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_Management_System_DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

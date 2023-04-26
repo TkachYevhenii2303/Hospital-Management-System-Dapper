@@ -3676,9 +3676,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj",
-      "projectName": "Dapper-Data-Access-Layer",
-      "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj",
+      "projectUniqueName": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_Management_System_DAL.csproj",
+      "projectName": "Hospital_Management_System_DAL",
+      "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_Management_System_DAL.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
       "outputPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\obj\\",
       "projectStyle": "PackageReference",

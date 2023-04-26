@@ -1694,7 +1694,27 @@
           }
         }
       },
-      "Dapper-Data-Access-Layer/1.0.0": {
+      "Hospital_Management_System_BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
+          "Bogus": "34.0.2",
+          "Dapper": "2.0.123",
+          "Hospital_Management_System_DAL": "1.0.0",
+          "Mapster": "7.3.0",
+          "Microsoft.Data.SqlClient": "5.1.0",
+          "Microsoft.EntityFrameworkCore": "7.0.4"
+        },
+        "compile": {
+          "bin/placeholder/Hospital_Management_System_BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hospital_Management_System_BLL.dll": {}
+        }
+      },
+      "Hospital_Management_System_DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1709,30 +1729,10 @@
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
-          "bin/placeholder/Dapper-Data-Access-Layer.dll": {}
+          "bin/placeholder/Hospital_Management_System_DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Dapper-Data-Access-Layer.dll": {}
-        }
-      },
-      "Dapper-Example-Bussines-Logic/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "AutoMapper": "12.0.1",
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
-          "Bogus": "34.0.2",
-          "Dapper": "2.0.123",
-          "Dapper-Data-Access-Layer": "1.0.0",
-          "Mapster": "7.3.0",
-          "Microsoft.Data.SqlClient": "5.1.0",
-          "Microsoft.EntityFrameworkCore": "7.0.4"
-        },
-        "compile": {
-          "bin/placeholder/Dapper-Example-Bussines-Logic.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dapper-Example-Bussines-Logic.dll": {}
+          "bin/placeholder/Hospital_Management_System_DAL.dll": {}
         }
       }
     }
@@ -4861,15 +4861,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Dapper-Data-Access-Layer/1.0.0": {
+    "Hospital_Management_System_BLL/1.0.0": {
       "type": "project",
-      "path": "../Dapper-Data-Access-Layer/Dapper-Data-Access-Layer.csproj",
-      "msbuildProject": "../Dapper-Data-Access-Layer/Dapper-Data-Access-Layer.csproj"
+      "path": "../Dapper-Example-Bussines-Logic/Hospital_Management_System_BLL.csproj",
+      "msbuildProject": "../Dapper-Example-Bussines-Logic/Hospital_Management_System_BLL.csproj"
     },
-    "Dapper-Example-Bussines-Logic/1.0.0": {
+    "Hospital_Management_System_DAL/1.0.0": {
       "type": "project",
-      "path": "../Dapper-Example-Bussines-Logic/Dapper-Example-Bussines-Logic.csproj",
-      "msbuildProject": "../Dapper-Example-Bussines-Logic/Dapper-Example-Bussines-Logic.csproj"
+      "path": "../Dapper-Data-Access-Layer/Hospital_Management_System_DAL.csproj",
+      "msbuildProject": "../Dapper-Data-Access-Layer/Hospital_Management_System_DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4878,9 +4878,9 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Bogus >= 34.0.2",
       "Dapper >= 2.0.123",
-      "Dapper-Data-Access-Layer >= 1.0.0",
-      "Dapper-Example-Bussines-Logic >= 1.0.0",
       "FluentMigrator.Runner >= 3.3.2",
+      "Hospital_Management_System_BLL >= 1.0.0",
+      "Hospital_Management_System_DAL >= 1.0.0",
       "Mapster >= 7.3.0",
       "Microsoft.Data.SqlClient >= 5.1.0",
       "Microsoft.EntityFrameworkCore >= 7.0.4",
@@ -4896,9 +4896,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\Example-API-Dapper.csproj",
-      "projectName": "Example-API-Dapper",
-      "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\Example-API-Dapper.csproj",
+      "projectUniqueName": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\Hospital_Management_System_API.csproj",
+      "projectName": "Hospital_Management_System_API",
+      "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\Hospital_Management_System_API.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
       "outputPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Example-API-Dapper\\obj\\",
       "projectStyle": "PackageReference",
@@ -4917,11 +4917,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj": {
-              "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Dapper-Data-Access-Layer.csproj"
+            "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_Management_System_DAL.csproj": {
+              "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Data-Access-Layer\\Hospital_Management_System_DAL.csproj"
             },
-            "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj": {
-              "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj"
+            "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Hospital_Management_System_BLL.csproj": {
+              "projectPath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Hospital_Management_System_BLL.csproj"
             }
           }
         }

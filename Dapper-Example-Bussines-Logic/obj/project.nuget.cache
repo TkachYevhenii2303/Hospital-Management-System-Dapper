@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hHwLCybxDzXSopBNffbp70OU73g4qjJ1eaKL9+A8dUUzSdGaCIyRF+vmRi8M8ObXipl8e95J1LYpV8SzfcUfbQ==",
+  "dgSpecHash": "pY0wDgRJiEid7FAek4MwyZTYasWxVjasTuByJuEFh7xziEXCNhFJ36sFInVHQigmswqe77h5TGXjhX5yFhQzfA==",
   "success": true,
-  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Dapper-Example-Bussines-Logic.csproj",
+  "projectFilePath": "D:\\Education - Programming and Books\\Learning ASP.NET Core\\ASP.NET Core Lessons\\Example-Dapper-API-Migration\\Dapper-Example-Bussines-Logic\\Hospital_Management_System_BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

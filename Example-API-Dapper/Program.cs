@@ -34,7 +34,7 @@ builder.Services.AddSwaggerGen(s =>
     s.IncludeXmlComments(xmlPath);
 });
 
-builder.Services.AddScoped<SqlConnection>(s => new SqlConnection(builder.Configuration.GetConnectionString("SqlConnection")));
+builder.Services.AddScoped<SqlConnection>(s => new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IDbTransaction>(s =>
 {
     SqlConnection connection = s.GetRequiredService<SqlConnection>();
@@ -47,9 +47,9 @@ builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 builder.Services
     .AddScoped<IUnit_of_Work, Unit_of_Work>()
-    .AddScoped<ICompanyRepository, CompanyRepository>()
-    .AddScoped<IEmployeesRepository, EmployeesRepository>()
-    .AddScoped<IDepartmentRepository, DepartmentRepository>()
+    .AddScoped<ICompany_Repository, CompanyRepository>()
+    .AddScoped<IEmployees_Repository, EmployeesRepository>()
+    .AddScoped<IDepartment_Repository, DepartmentRepository>()
     .AddScoped<IEmployeeServices, EmployeeServices>();
 
 var app = builder.Build();

@@ -9,10 +9,10 @@ using Dapper_Data_Access_Layer.Base_Entity;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    [Table("Department")]
     public class Department : Entity
     {
         public string Department_name { get; set; } = String.Empty;
-        public int Clinic_id { get; set; }
+       
+        public Guid Clinic_id { get; set; }
     }
 }

@@ -15,6 +15,6 @@ namespace Dapper_Data_Access_Layer.Entities
 
         public DateTime Status_time { get; set; }
 
-        public string Details { get; set; } = String.Empty;
+        public string Details { get; set; } = string.Empty;
     }
 }

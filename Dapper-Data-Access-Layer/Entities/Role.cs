@@ -8,9 +8,8 @@ using Dapper_Data_Access_Layer.Base_Entity;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    [Table("Role")]
     public class Role : Entity
     {
-        public string Role_name { get; set; } = String.Empty;
+        public string Role_name { get; set; } = string.Empty;
     }
 }
