@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Example_Entity_Framework_Hospital.props" />
-</Project>
