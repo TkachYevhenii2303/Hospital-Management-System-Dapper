@@ -8,7 +8,7 @@ using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts.Interfaces
 {
-    public interface ICompany_Repository : IGenericRepository<Clinic>
+    public interface ICompany_Repository : IGenericRepository<Hospital>
     {
     } 
 }

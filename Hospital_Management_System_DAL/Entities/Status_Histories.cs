@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    public class Document_type : Entity
+    public class Status_Histories : Entity
     {
-        public string Type_name { get; set; } = string.Empty;
+        public string Details { get; set; } = string.Empty;
+        
+        public Guid Appointment_ID { get; set; }
+
+        public Guid Appointment_Status_ID { get; set; }
     }
 }

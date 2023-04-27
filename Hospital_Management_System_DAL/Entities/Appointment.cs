@@ -9,14 +9,14 @@ namespace Dapper_Data_Access_Layer.Entities
 {
     public class Appointment : Entity
     {
-        public Guid Patient_Case_Id { get; set; }
-
-        public Guid In_Department_Id { get; set; }
-        
-        public Guid Appointment_Status_Id { get; set; }
-
         public DateTime Appointment_Start_time { get; set; }
 
         public DateTime Appointment_End_time { get; set; }
+        
+        public Guid Patient_Cases_ID { get; set; }
+
+        public Guid In_Departments_ID { get; set; }
+        
+        public Guid Appointment_Status_ID { get; set; }
     }
 }

@@ -1,15 +1,10 @@
 using System.Data;
 using System.Reflection;
-using Bogus;
-using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.Contracts;
 using Dapper_Data_Access_Layer.Repository.Contracts.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
-using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Interfaces;
-using Dapper_Example_Bussines_Logic.Data_Transfer_Object.Services.Models;
 using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,15 +37,9 @@ builder.Services.AddScoped<IDbTransaction>(s =>
     return connection.BeginTransaction();
 });
 
-// Dependency Injections 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
-builder.Services
-    .AddScoped<IUnit_of_Work, Unit_of_Work>()
-    .AddScoped<ICompany_Repository, Company_Repository>()
-    .AddScoped<IEmployees_Repository, Employees_Repository>()
-    .AddScoped<IDepartment_Repository, Department_Repository>()
-    .AddScoped<IEmployeeServices, EmployeeServices>();
+builder.Services.AddScoped<IUnit_of_Work, Unit_of_Work>();
 
 var app = builder.Build();
 

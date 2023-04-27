@@ -12,7 +12,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Dapper_Data_Access_Layer.Repository.Contracts
 {
-    public class Company_Repository : GenericRepository<Clinic>, ICompany_Repository
+    public class Company_Repository : GenericRepository<Hospital>, ICompany_Repository
     {
         public Company_Repository(SqlConnection connection, IDbTransaction transaction) 
             : base(connection, transaction, "Clinic")

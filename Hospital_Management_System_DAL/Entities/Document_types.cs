@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    public class Appointment_Status : Entity
+    public class Document_types : Entity
     {
-        public string Status_title { get; set; } = string.Empty;
+        public string Types_title { get; set; } = string.Empty;
     }
 }

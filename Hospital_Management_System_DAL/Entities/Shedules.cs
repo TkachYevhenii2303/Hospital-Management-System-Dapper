@@ -8,8 +8,12 @@ using Dapper_Data_Access_Layer.Base_Entity;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    public class Role : Entity
+    public class Shedules : Entity
     {
-        public string Role_name { get; set; } = string.Empty;
+        public DateTime Time_start { get; set; }
+        
+        public DateTime Time_end { get; set; }
+
+        public Guid In_Department_ID { get; set; }
     }
 }

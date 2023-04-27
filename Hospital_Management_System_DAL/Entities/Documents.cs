@@ -9,22 +9,20 @@ namespace Dapper_Data_Access_Layer.Entities
 {
     public class Documents : Entity
     {
-        public string Document_Internal_id { get; set; } = string.Empty;
+        public string Documents_title { get; set; } = string.Empty;
 
-        public string Document_Name { get; set; } = string.Empty;
+        public string Documents_link { get; set; } = string.Empty;
 
-        public string Document_link { get; set; } = string.Empty;
-
-        public string Document_Details { get; set; } = string.Empty;
+        public string Documents_details { get; set; } = string.Empty;
         
-        public Guid Document_type_Id { get; set; }
+        public Guid Documents_types_ID { get; set; }
 
-        public Guid Patients_Id { get; set; }
+        public Guid Patients_ID { get; set; }
         
-        public Guid Patient_Case_Id { get; set; }
+        public Guid Patient_Cases_ID { get; set; }
         
-        public Guid In_Department_Id { get; set; }
+        public Guid In_Departments_ID { get; set; }
 
-        public Guid Appointment_Status_Id { get; set; }
+        public Guid Appointment_Status_ID { get; set; }
     }
 }

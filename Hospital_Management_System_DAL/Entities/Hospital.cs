@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -8,16 +9,12 @@ using Dapper_Data_Access_Layer.Base_Entity;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    public class HasRole : Entity
+    public class Hospital : Entity
     {
-        public int Employees_id { get; set; }
-
-        public int Role_id { get; set; }
+        public string Hospital_title { get; set; } = string.Empty;
         
-        public DateTime Time_from { get; set; }
+        public string Address { get; set; } = string.Empty;
         
-        public DateTime Time_to { get; set; }
-        
-        public bool Active_is { get; set; }
+        public string Details { get; set; } = string.Empty; 
     }
 }

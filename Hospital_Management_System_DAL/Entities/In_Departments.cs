@@ -8,14 +8,17 @@ using Dapper_Data_Access_Layer.Base_Entity;
 
 namespace Dapper_Data_Access_Layer.Entities
 {
-    public class Shedule : Entity
+    public class In_Departments : Entity
     {
-        public Guid In_Department_id { get; set; }
+        
+        public DateTime Time_from { get; set; }
+        
+        public DateTime Time_to { get; set; }
 
-        public DateTime Date { get; set; }
-        
-        public DateTime Time_start { get; set; }
-        
-        public DateTime Time_end { get; set; }
+        public bool Active_is { get; set; } = true;
+
+        public Guid Employees_ID { get; set; }
+
+        public Guid Department_ID { get; set; }
     }
 }
