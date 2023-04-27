@@ -5,9 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital_Management_System_API", "Hospital_Management_System_API.csproj", "{86C5A243-2BEA-4372-94C1-69D4AE38C29E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital_Management_System_DAL", "..\Dapper-Data-Access-Layer\Hospital_Management_System_DAL.csproj", "{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital_Management_System_DAL", "..\Hospital_Management_System_DAL\Hospital_Management_System_DAL.csproj", "{EDA2FE67-5FA0-432C-889B-3CFFA260CC68}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital_Management_System_BLL", "..\Dapper-Example-Bussines-Logic\Hospital_Management_System_BLL.csproj", "{81BDF626-E148-4616-99ED-F3DA6BF80C03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital_Management_System_BLL", "..\Hospital_Management_System_BLL\Hospital_Management_System_BLL.csproj", "{81BDF626-E148-4616-99ED-F3DA6BF80C03}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hospital_Management_System_ADO_Dapper", "Hospital_Management_System_ADO_Dapper", "{AE97B49B-BCCA-4152-A92C-9F749E92C334}"
 EndProject

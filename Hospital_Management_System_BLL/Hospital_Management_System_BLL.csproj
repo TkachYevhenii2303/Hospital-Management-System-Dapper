@@ -17,8 +17,4 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Dapper-Data-Access-Layer\Hospital_Management_System_DAL.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -38,8 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dapper-Data-Access-Layer\Hospital_Management_System_DAL.csproj" />
-    <ProjectReference Include="..\Dapper-Example-Bussines-Logic\Hospital_Management_System_BLL.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
