@@ -28,86 +28,98 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
         public GenericRepository(SqlConnection connection, IDbTransaction transaction, string table)
         {
             _connection = connection;
+
             _transaction = transaction;
+            
             _table = table;
         }
-        /// <summary>
-        /// This method returned the all information about table
-        /// </summary>
-        /// <returns>IEnumerable(TEntity)></returns>
-        public async Task<IEnumerable<TEntity>> Get_all_Information()
+      
+        public async Task<Result_Response<IEnumerable<TEntity>>> Get_all_Information()
         {
-            var query = $"Select * From {_table}";
-            return await _connection.QueryAsync<TEntity>(query, transaction: _transaction);
+            var Result_Response = new Result_Response<IEnumerable<TEntity>>();
+
+            string Response = $"Select * From {_table}";
+
+            Result_Response.Result = await _connection.QueryAsync<TEntity>(Response, transaction: _transaction);
+
+            return Result_Response;
         }
 
-        /// <summary>
-        /// This method returned entity by id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns>Entity</returns>
-        /// <exception cref="KeyNotFoundException"></exception>
-        public async Task<TEntity> Get_by_Id(Guid id)
+        public async Task<Result_Response<TEntity>> Get_Entity_ID(Guid ID)
         {
-            string query = $"Select * From {_table} Where Id = @Id";
-            var result =
-                await _connection.QuerySingleOrDefaultAsync<TEntity>(query, param: 
-                new { Id = id }, 
+            var Result_Response = new Result_Response<TEntity>();
+
+            string Response = $"Select * From {_table} Where ID = @ID";
+            
+            Result_Response.Result =
+                await _connection.QuerySingleOrDefaultAsync<TEntity>(Response, param: 
+                new { ID = ID }, 
                 transaction: _transaction);
 
-            if (result == null)
+            if (Result_Response.Result is null)
             {
-                throw new KeyNotFoundException($"{_table} with id [{id}] could not be found.");
+                Result_Response.Message = $"We could not found entity with ID {ID} in {this.Get_Entity_ID(ID).GetType().Name} method!";
+                Result_Response.Success = false;
+                throw new Exception($"Entity with ID {ID} could not be found!");
             }
 
-            return result;
+            return Result_Response;
         }
 
-        /// <summary>
-        /// This method Insert new entity into table
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public async Task<IEnumerable<TEntity>> Insert_Entity(TEntity entity)
+        public async Task<Result_Response<IEnumerable<TEntity>>> Insert_Entity(TEntity entity)
         {
+            var Result_Response = new Result_Response<IEnumerable<TEntity>>();
+
             entity.Created_at = DateTime.Now;
+
             entity.Updated_at = DateTime.Now;
 
-            string query = this.Generate_Insert_Query();
+            string Response = this.Generate_Insert_Query();
 
-            await _connection.ExecuteAsync(query, param: entity, transaction: _transaction);
+            await _connection.ExecuteAsync(Response, param: entity, transaction: _transaction);
 
-            return await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
+            Result_Response.Result = await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
+
+            return Result_Response;
         }
 
-        /// <summary>
-        /// This method Update the some entity
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns></returns>
-        public async Task<IEnumerable<TEntity>> Update_Entity(TEntity entity)
+        public async Task<Result_Response<IEnumerable<TEntity>>> Update_Entity(TEntity entity)
         {
+            var Result_Response = new Result_Response<IEnumerable<TEntity>>();
+
             entity.Created_at = DateTime.Now;
+
             entity.Updated_at = DateTime.Now;
 
-            string query = this.Generate_Update_Query();
+            try
+            {
+                string Response = this.Generate_Update_Query();
 
-            await _connection.ExecuteAsync(query, param: entity, transaction: _transaction);
+                await _connection.ExecuteAsync(Response, param: entity, transaction: _transaction);
+            }
+            catch (Exception exceptions)
+            {
+                Result_Response.Message = "We have the problem with Insert Statemen!";
+                Result_Response.Success = false;
+                throw new Exception($"Something went wrong in {this.Update_Entity(entity).GetType().Name} method! {exceptions.Message}");
+            }
 
-            return await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
+            Result_Response.Result = await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
+
+            return Result_Response;
         }
 
-        /// <summary>
-        /// This method can delete the entity by id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<IEnumerable<TEntity>> Delete_Entity(Guid id)
+        public async Task<Result_Response<IEnumerable<TEntity>>> Delete_Entity(Guid ID)
         {
-            string query = $"Delete from {_table} where Id = @Id";
-            await _connection.ExecuteAsync(query, new { Id = id }, transaction: _transaction);
+            var Result_Response = new Result_Response<IEnumerable<TEntity>>();
 
-            return await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
+            string Response = $"Delete from {_table} where ID = @ID";
+
+            await _connection.ExecuteAsync(Response, new { ID = ID }, transaction: _transaction);
+
+            Result_Response.Result = await _connection.QueryAsync<TEntity>($"Select * From {_table}", transaction: _transaction);
+
+            return Result_Response;
         }
 
         private IEnumerable<PropertyInfo> Get_Properties => typeof(TEntity).GetProperties();
@@ -135,6 +147,7 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
 
             return builder.ToString();
         }
+
         private string Generate_Update_Query()
         {
             var builder = new StringBuilder($"Update {_table} set ");

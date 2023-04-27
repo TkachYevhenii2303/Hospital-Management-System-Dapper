@@ -4876,11 +4876,9 @@
     "net6.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
-      "Bogus >= 34.0.2",
       "Dapper >= 2.0.123",
       "FluentMigrator.Runner >= 3.3.2",
       "Hospital_Management_System_BLL >= 1.0.0",
-      "Mapster >= 7.3.0",
       "Microsoft.Data.SqlClient >= 5.1.0",
       "Microsoft.EntityFrameworkCore >= 7.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.3",
@@ -4940,10 +4938,6 @@
             "target": "Package",
             "version": "[12.0.0, )"
           },
-          "Bogus": {
-            "target": "Package",
-            "version": "[34.0.2, )"
-          },
           "Dapper": {
             "target": "Package",
             "version": "[2.0.123, )"
@@ -4951,10 +4945,6 @@
           "FluentMigrator.Runner": {
             "target": "Package",
             "version": "[3.3.2, )"
-          },
-          "Mapster": {
-            "target": "Package",
-            "version": "[7.3.0, )"
           },
           "Microsoft.Data.SqlClient": {
             "target": "Package",

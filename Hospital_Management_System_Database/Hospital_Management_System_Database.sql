@@ -41,7 +41,7 @@ Create table Department
 	[Created_at] [datetime] null default GETDATE(),
 	[Updated_at] [datetime] null default GETDATE(),
 
-	Constraint [PK-Department] Primary key Clustered([Id] ASC)
+	Constraint [PK-Department] Primary key Clustered([ID] ASC)
 	with (Pad_index = off, Statistics_norecompute = off, Ignore_dup_key = off,
 	allow_row_locks = on, allow_page_locks = on) on [Primary],
 
