@@ -8,7 +8,7 @@ using Dapper_Data_Access_Layer.Entities;
 
 namespace Dapper_Data_Access_Layer.Bogus_Generator
 {
-    public static class Seeding_Data
+    public class Seeding_Bogus
     {
         public static List<Employees> Employees { get; set; } = new();
         public static List<Roles> Roles { get; set; } = new();

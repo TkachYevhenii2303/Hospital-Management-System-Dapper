@@ -1,0 +1,15 @@
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\bin\Debug\net6.0\Hospital_Management_System_BLL.deps.json
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\bin\Debug\net6.0\Hospital_Management_System_BLL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\bin\Debug\net6.0\Hospital_Management_System_BLL.pdb
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\bin\Debug\net6.0\Hospital_Management_System_DAL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\bin\Debug\net6.0\Hospital_Management_System_DAL.pdb
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.csproj.AssemblyReference.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.AssemblyInfoInputs.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.AssemblyInfo.cs
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.csproj.CoreCompileInputs.cache
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.csproj.CopyComplete
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\refint\Hospital_Management_System_BLL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\Hospital_Management_System_BLL.pdb
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_BLL\obj\Debug\net6.0\ref\Hospital_Management_System_BLL.dll

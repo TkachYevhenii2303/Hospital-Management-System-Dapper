@@ -30,10 +30,10 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
             _connection = connection;
 
             _transaction = transaction;
-            
+
             _table = table;
         }
-      
+
         public async Task<Result_Response<IEnumerable<TEntity>>> Get_all_Information()
         {
             var Result_Response = new Result_Response<IEnumerable<TEntity>>();

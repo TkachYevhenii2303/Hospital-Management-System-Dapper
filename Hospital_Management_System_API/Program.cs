@@ -1,5 +1,7 @@
 using System.Data;
 using System.Reflection;
+using Dapper_Data_Access_Layer.Entities_Repositories;
+using Dapper_Data_Access_Layer.Entities_Repositories.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Microsoft.Data.SqlClient;
@@ -34,6 +36,10 @@ builder.Services.AddScoped<IDbTransaction>(configurations =>
     connection.Open();
     return connection.BeginTransaction();
 });
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IUnit_of_Work, Unit_of_Work>();
+builder.Services.AddScoped<IEmployees_Repository, Employees_Repository>();
 
 var app = builder.Build();
 

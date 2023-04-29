@@ -1,4 +1,5 @@
 ﻿using Dapper_Data_Access_Layer.Bogus_Generator;
+using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Entities_Repositories;
 using Hospital_Management_System_Console.Employees_Configurations;
 using Microsoft.Data.SqlClient;
@@ -10,9 +11,16 @@ namespace Hospital_Management_System_Console
     {
         static async Task Main(string[] args)
         {
-            var Default_Connections = ConfigurationManager.ConnectionStrings["DefaultConnections"].ConnectionString;
+            var connections = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnections"].ConnectionString);
+            
+            await connections.OpenAsync();
 
-            await Seeding_all_Datas.Connections_with_Database_and_Seeding(Default_Connections);
+            var transactions = await connections.BeginTransactionAsync();
+
+            Seeding_all_Dates<Employees_Repository, Employees> Seeding_Informations 
+                = new Seeding_all_Dates<Employees_Repository, Employees>(Seeding_Bogus.Seeding_Employees, new Employees_Repository(connections, transactions), transactions);
+
+            await Seeding_Informations.Seeding_Repositories();
 
             Console.ReadLine();
         }

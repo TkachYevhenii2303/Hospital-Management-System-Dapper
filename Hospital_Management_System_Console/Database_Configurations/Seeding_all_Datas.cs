@@ -1,4 +1,5 @@
-﻿using Dapper_Data_Access_Layer.Bogus_Generator;
+﻿using Dapper_Data_Access_Layer.Base_Entity;
+using Dapper_Data_Access_Layer.Bogus_Generator;
 using Dapper_Data_Access_Layer.Entities_Repositories;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Microsoft.Data.SqlClient;
@@ -12,50 +13,44 @@ using System.Threading.Tasks;
 
 namespace Hospital_Management_System_Console.Employees_Configurations
 {
-    public class Seeding_all_Datas<TRepository> 
+    public class Seeding_all_Dates<TRepository, TEntity>
         where TRepository : class
     {
-        private readonly SqlConnection connections;
+        private readonly Func<List<TEntity>> _Seeding_Bogus;
 
-        private readonly SqlTransaction transaction;
+        private readonly TRepository _Repository;
 
-        public Seeding_all_Datas(string connections_strings)
+        private readonly IDbTransaction _transaction;
+
+        public Seeding_all_Dates(Func<List<TEntity>> Seeding_Bogus, TRepository Repository, IDbTransaction transaction)
         {
-            connections = new SqlConnection(connections_strings);
+            _Seeding_Bogus = Seeding_Bogus;
 
-            transaction = connections.BeginTransaction();
+            _Repository = Repository;
+
+            _transaction = transaction;
         }
 
-        public static async Task Connections_with_Database_and_Seeding(string connections_strings)
+        public async Task Seeding_Repositories()
         {
-            var connections = new SqlConnection(connections_strings);
-
-            await connections.OpenAsync();
-
-            var transactions = await connections.BeginTransactionAsync();
-
-            var Employees_Repository = new Employees_Repository(connection: connections, transaction: transactions);
-
-            var Employees_Bogus = Seeding_Data.Seeding_Employees();
-
             try
-			{
-                foreach (var Employees in Employees_Bogus)
+            {
+                var Entities = _Seeding_Bogus.Invoke();
+
+                var Inserting = _Repository.GetType().GetMethod("Insert_Entity");
+
+                foreach (var Entity in Entities)
                 {
-                    await Employees_Repository.Insert_Entity(Employees);
+                    await (Task)Inserting.Invoke(_Repository, new object[] { Entity });
                 }
 
-                await Console.Out.WriteLineAsync($"The seeding for the {Employees_Repository.GetType().Name} complete!!!");
-            }
-			catch (Exception exception)
-			{
-                throw new Exception($"Something went wrong while seeding Database!!! {exception.Message}");
-			}
-            finally
-            {
-                await transactions.CommitAsync();
+                _transaction.Commit();
 
-                await connections.CloseAsync();
+                await Console.Out.WriteLineAsync($"The seeding for {typeof(TEntity).Name} is complete!!!");
+            }
+            catch (Exception exception)
+            {
+                throw new Exception($"Something went wrong while seeding Database!!! {exception.Message}");
             }
         }
     }
