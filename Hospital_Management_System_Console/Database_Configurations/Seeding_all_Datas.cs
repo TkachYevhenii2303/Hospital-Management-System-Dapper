@@ -4,6 +4,7 @@ using Dapper_Data_Access_Layer.Entities_Repositories;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,7 +22,7 @@ namespace Hospital_Management_System_Console.Employees_Configurations
         private readonly TRepository _Repository;
 
         private readonly IDbTransaction _transaction;
-
+        
         public Seeding_all_Dates(Func<List<TEntity>> Seeding_Bogus, TRepository Repository, IDbTransaction transaction)
         {
             _Seeding_Bogus = Seeding_Bogus;
@@ -31,7 +32,7 @@ namespace Hospital_Management_System_Console.Employees_Configurations
             _transaction = transaction;
         }
 
-        public async Task Seeding_Repositories()
+        public async Task Seeding_Repository()
         {
             try
             {
@@ -43,8 +44,6 @@ namespace Hospital_Management_System_Console.Employees_Configurations
                 {
                     await (Task)Inserting.Invoke(_Repository, new object[] { Entity });
                 }
-
-                _transaction.Commit();
 
                 await Console.Out.WriteLineAsync($"The seeding for {typeof(TEntity).Name} is complete!!!");
             }

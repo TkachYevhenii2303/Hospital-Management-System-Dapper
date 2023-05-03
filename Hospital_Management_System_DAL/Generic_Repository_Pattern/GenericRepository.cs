@@ -42,6 +42,8 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
 
             Result_Response.Result = await _connection.QueryAsync<TEntity>(Response, transaction: _transaction);
 
+            Result_Response.Message = "Fetching operation was Succesfull! Everything is ok!";
+
             return Result_Response;
         }
 
@@ -62,6 +64,8 @@ namespace Dapper_Data_Access_Layer.Repository.RepositoryPattern
                 Result_Response.Success = false;
                 throw new Exception($"Entity with ID {ID} could not be found!");
             }
+
+            Result_Response.Message = "Fetching operation was Succesfull! Everything is ok!";
 
             return Result_Response;
         }

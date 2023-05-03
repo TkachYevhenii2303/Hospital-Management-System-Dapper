@@ -10,3 +10,4 @@ D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_DAL\obj\Debug\net6.0\refint\Hospital_Management_System_DAL.dll
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_DAL\obj\Debug\net6.0\Hospital_Management_System_DAL.pdb
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_DAL\obj\Debug\net6.0\ref\Hospital_Management_System_DAL.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_DAL\bin\Debug\net6.0\Hospital_Management_System_DAL.dll.config

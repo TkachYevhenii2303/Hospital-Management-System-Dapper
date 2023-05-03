@@ -123,6 +123,10 @@ Create table [Has_Role]
 )
 Go
 
+alter table [Has_Role]
+drop constraint [Unique_Values_Roles_Employees];
+Go
+
 Set ansi_nulls on
 Go
 
@@ -274,8 +278,6 @@ Create table [Appointments]
 	Constraint [FK-Appointments-to-In_Department] Foreign key ([In_Departments_ID]) references [In_Departments]([ID]),
 
 	Constraint [FK-Appointments-to-Patient_Case_Id] Foreign key ([Patient_Cases_ID]) references [Patients_Cases]([ID]),
-
-	Constraint [FK-Appointments-to-Appointment_Status] Foreign key ([Appointment_Status_ID]) references [Appointment_Status]([ID])
 )
 Go
 
@@ -364,4 +366,21 @@ Create table [Documents]
 )
 Go
 
+Create procedure Employees_and_Departments @ID UNIQUEIDENTIFIER
+as 
+Select Employees.First_title, Employees.Last_title, Employees.Email, Employees.Mobile, Department.Department_title
+From Employees 
+Left outer Join In_Departments on Employees.ID = In_Departments.Employees_ID 
+Left outer Join Department on In_Departments.Departments_ID = Department.Id
+where Employees.ID = @ID
+Go
 
+Execute Employees_and_Departments @ID = '2CC8342E-F8AB-48AD-BD45-0D680C22AC69';
+
+Drop procedure Employees_and_Departments
+
+Select Department.Department_title From Employees e 
+inner join In_Departments i on e.ID = i.Employees_ID
+inner join Department d on d.Id = i.Departments_ID
+Where e.ID = 'B0BDED34-5A02-4E55-A470-6C526C30B74E'
+Go

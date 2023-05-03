@@ -14,6 +14,6 @@ namespace Dapper_Data_Access_Layer.Entities
         
         public DateTime Time_end { get; set; }
 
-        public Guid In_Department_ID { get; set; }
+        public Guid In_Departments_ID { get; set; }
     }
 }

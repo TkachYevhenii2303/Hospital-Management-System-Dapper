@@ -19,6 +19,6 @@ namespace Dapper_Data_Access_Layer.Entities
 
         public Guid Employees_ID { get; set; }
 
-        public Guid Department_ID { get; set; }
+        public Guid Departments_ID { get; set; }
     }
 }

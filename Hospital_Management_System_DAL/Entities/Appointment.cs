@@ -16,7 +16,5 @@ namespace Dapper_Data_Access_Layer.Entities
         public Guid Patient_Cases_ID { get; set; }
 
         public Guid In_Departments_ID { get; set; }
-        
-        public Guid Appointment_Status_ID { get; set; }
     }
 }

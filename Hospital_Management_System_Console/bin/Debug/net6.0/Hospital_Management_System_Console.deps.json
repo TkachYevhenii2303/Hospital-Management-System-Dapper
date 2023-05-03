@@ -700,7 +700,9 @@
           "Microsoft.Data.SqlClient": "5.1.1",
           "Microsoft.EntityFrameworkCore": "7.0.4",
           "Microsoft.Extensions.Configuration": "7.0.0",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "System.Configuration.ConfigurationManager": "7.0.0"
         },
         "runtime": {
           "Hospital_Management_System_DAL.dll": {}

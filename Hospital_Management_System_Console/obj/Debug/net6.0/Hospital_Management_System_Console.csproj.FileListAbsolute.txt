@@ -72,3 +72,4 @@ D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_Console\obj\Debug\net6.0\Hospital_Management_System_Console.pdb
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_Console\obj\Debug\net6.0\Hospital_Management_System_Console.genruntimeconfig.cache
 D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_Console\obj\Debug\net6.0\ref\Hospital_Management_System_Console.dll
+D:\Education - Programming and Books\Learning ASP.NET Core\ASP.NET Core Lessons\Example-Dapper-API-Migration\Hospital_Management_System_Console\bin\Debug\net6.0\Hospital_Management_System_DAL.dll.config

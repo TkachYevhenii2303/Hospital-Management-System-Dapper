@@ -4,5 +4,46 @@
         <name>Hospital_Management_System_API</name>
     </assembly>
     <members>
+        <member name="M:Hospital_Management_System_API.Controllers.EmployeesController.Get_all_Employees">
+            <summary>
+            Fetching all information from Employees table 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital_Management_System_API.Controllers.EmployeesController.Get_Employees_ID(System.Guid)">
+            <summary>
+            Fetching the Employee with by ID
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital_Management_System_API.Controllers.EmployeesController.Insert_Employees(Dapper_Example_Bussines_Logic.Data_trasfer_objects.Request_Result_DTO.Employees_Request_DTO)">
+            <summary>
+            Inserting the Employee to the table
+            </summary>
+            <param name="Employees"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital_Management_System_API.Controllers.EmployeesController.Update_Employees(Dapper_Example_Bussines_Logic.Data_trasfer_objects.Request_Result_DTO.Employees_Request_Update_DTO)">
+            <summary>
+            Updating the Employee to the table
+            </summary>
+            <param name="Employees"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital_Management_System_API.Controllers.EmployeesController.Delete_Employees(System.Guid)">
+            <summary>
+            Deleting the Employee to the table
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hospital_Management_System_API.Controllers.EmployeesController.Get_Employees_and_Departments_ID(System.Guid)">
+            <summary>
+            Fetching the Get_Employees_and_Departments_ID with ID
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
