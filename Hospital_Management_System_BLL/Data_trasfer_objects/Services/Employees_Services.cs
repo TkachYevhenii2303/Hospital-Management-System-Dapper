@@ -74,9 +74,9 @@ namespace Dapper_Example_Bussines_Logic.Data_trasfer_objects.Services
             return _mapper.Map<Result_Response<Employees>, Result_Response<Employees_Departments_Result_DTO>>(result);
         }
 
-        public List<string> Get_all_Departments_titles_ID(Guid ID)
+        public async Task<IEnumerable<string>> Get_all_Departments_titles_ID(Guid ID)
         {
-            var result = _Unit_of_Work.Employees_Repository.Get_Departments_title_ID(ID);
+            var result = await _Unit_of_Work.Employees_Repository.Get_Departments_title_ID(ID);
 
             return result;
         }

@@ -366,21 +366,59 @@ Create table [Documents]
 )
 Go
 
-Create procedure Employees_and_Departments @ID UNIQUEIDENTIFIER
-as 
-Select Employees.First_title, Employees.Last_title, Employees.Email, Employees.Mobile, Department.Department_title
-From Employees 
-Left outer Join In_Departments on Employees.ID = In_Departments.Employees_ID 
-Left outer Join Department on In_Departments.Departments_ID = Department.Id
-where Employees.ID = @ID
-Go
-
-Execute Employees_and_Departments @ID = '2CC8342E-F8AB-48AD-BD45-0D680C22AC69';
-
 Drop procedure Employees_and_Departments
 
-Select Department.Department_title From Employees 
-inner join In_Departments on Employees.ID = In_Departments.Employees_ID
-inner join Department on Department.Id = In_Departments.Departments_ID
-Where Employees.ID = 'B0BDED34-5A02-4E55-A470-6C526C30B74E'
-Go
+SELECT DISTINCT d.Department_title 
+FROM Employees e
+INNER JOIN In_Departments id ON e.ID = id.Employees_ID
+INNER JOIN Department d ON d.Id = id.Departments_ID
+WHERE e.ID = '2CC8342E-F8AB-48AD-BD45-0D680C22AC69';
+
+CREATE PROCEDURE Employees_and_Departments_Server @ID UNIQUEIDENTIFIER
+AS
+BEGIN
+    DECLARE @Employees TABLE (First_title NVARCHAR(50), Last_title NVARCHAR(50), Email NVARCHAR(50), Mobile NVARCHAR(50))
+    DECLARE @Departments TABLE (Department_title NVARCHAR(50))
+    
+    INSERT INTO @Employees (First_title, Last_title, Email, Mobile)
+    SELECT First_title, Last_title, Email, Mobile
+    FROM Employees
+    WHERE ID = @ID
+    
+    INSERT INTO @Departments (Department_title)
+    SELECT Department_title
+    FROM Department
+    WHERE Id IN (
+        SELECT Departments_ID
+        FROM In_Departments
+        WHERE Employees_ID = @ID
+    )
+    
+    SELECT DISTINCT e.First_title, e.Last_title, e.Email, e.Mobile, d.Department_title
+    FROM @Employees AS e
+    LEFT OUTER JOIN @Departments AS d ON 1=1
+END
+GO
+
+Execute Employees_and_Departments_Server '2CC8342E-F8AB-48AD-BD45-0D680C22AC69';
+
+CREATE PROCEDURE Employees_and_Departments
+    @ID UNIQUEIDENTIFIER
+AS 
+BEGIN
+    SELECT 
+        Employees.First_title, 
+        Employees.Last_title, 
+        Employees.Email, 
+        Employees.Mobile,
+        (SELECT Department.Department_title FROM In_Departments 
+         INNER JOIN Department ON In_Departments.Departments_ID = Department.Id
+         WHERE In_Departments.Employees_ID = Employees.ID
+         FOR JSON PATH) AS department_titles
+    FROM Employees 
+    WHERE Employees.ID = @ID
+END
+
+Drop procedure Employees_and_Departments;
+
+Execute Employees_and_Departments '2CC8342E-F8AB-48AD-BD45-0D680C22AC69';

@@ -13,6 +13,6 @@ namespace Dapper_Data_Access_Layer.Entities_Repositories.Interfaces
     {
         public Task<Result_Response<Employees>> Get_Employees_and_Departments(Guid ID);
 
-        public List<string> Get_Departments_title_ID(Guid ID);
+        public Task<IEnumerable<string>> Get_Departments_title_ID(Guid ID);
     }
 }

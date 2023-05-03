@@ -23,7 +23,7 @@ namespace Dapper_Data_Access_Layer.Entities_Repositories
             transactions = transaction;
         }
 
-        public List<string> Get_Departments_title_ID(Guid ID)
+        public async Task<IEnumerable<string>> Get_Departments_title_ID(Guid ID)
         {
             string Response = "SELECT DISTINCT d.Department_title " +
                 "FROM Employees e " +
@@ -31,11 +31,11 @@ namespace Dapper_Data_Access_Layer.Entities_Repositories
                 "INNER JOIN Department d ON d.Id = id.Departments_ID " +
                 "WHERE e.ID = @ID;";
 
-            var Result = connections.Query<string>(Response,
+            var Result = await connections.QueryAsync<string>(Response,
                 param: new { ID = ID },
                 transaction: transactions);
 
-            return Result.ToList();
+            return Result;
         }
 
         public async Task<Result_Response<Employees>> Get_Employees_and_Departments(Guid ID)

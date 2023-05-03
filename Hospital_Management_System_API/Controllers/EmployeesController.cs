@@ -194,12 +194,12 @@ namespace Hospital_Management_System_API.Controllers
         /// <param name="ID"></param>
         /// <returns></returns>
         [HttpGet, Route("Get_Departments_titles_ID/{ID}")]
-        public async Task<ActionResult<List<string>>> Get_Departments_titles_ID(Guid ID)
+        public async Task<ActionResult<IEnumerable<string>>> Get_Departments_titles_ID(Guid ID)
         {
             try
             {
                 _logger.LogInformation($"Fetching the Get_Employees_and_Departments_ID with {ID} ID...");
-                var result = _Employees_Services.Get_all_Departments_titles_ID(ID);
+                var result = await _Employees_Services.Get_all_Departments_titles_ID(ID);
 
                 if (result is null)
                 {

@@ -24,6 +24,6 @@ namespace Dapper_Example_Bussines_Logic.Data_trasfer_objects.Services.Interfaces
 
         public Task<Result_Response<Employees_Departments_Result_DTO>> Get_Employees_and_Departments_ID(Guid ID);
 
-        public List<string> Get_all_Departments_titles_ID(Guid ID);
+        public Task<IEnumerable<string>> Get_all_Departments_titles_ID(Guid ID);
     }
 }
