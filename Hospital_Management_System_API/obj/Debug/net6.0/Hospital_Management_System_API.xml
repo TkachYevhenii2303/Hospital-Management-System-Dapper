@@ -45,5 +45,12 @@
             <param name="ID"></param>
             <returns></returns>
         </member>
+        <member name="M:Hospital_Management_System_API.Controllers.EmployeesController.Get_Departments_titles_ID(System.Guid)">
+            <summary>
+            Fetching the Departments titles by ID for the Employee
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

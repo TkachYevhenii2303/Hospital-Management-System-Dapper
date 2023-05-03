@@ -379,8 +379,8 @@ Execute Employees_and_Departments @ID = '2CC8342E-F8AB-48AD-BD45-0D680C22AC69';
 
 Drop procedure Employees_and_Departments
 
-Select Department.Department_title From Employees e 
-inner join In_Departments i on e.ID = i.Employees_ID
-inner join Department d on d.Id = i.Departments_ID
-Where e.ID = 'B0BDED34-5A02-4E55-A470-6C526C30B74E'
+Select Department.Department_title From Employees 
+inner join In_Departments on Employees.ID = In_Departments.Employees_ID
+inner join Department on Department.Id = In_Departments.Departments_ID
+Where Employees.ID = 'B0BDED34-5A02-4E55-A470-6C526C30B74E'
 Go

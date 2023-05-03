@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dapper_Example_Bussines_Logic.Data_trasfer_objects.Response_Result_DTO
+namespace Dapper_Data_Access_Layer.Data_transfer_objects_on_DAL.Response_Result_DTO
 {
-    public class Employees_Departments_Result_DTO
+    public class Employees_with_Department_DTO
     {
         public string First_title { get; set; } = string.Empty;
 

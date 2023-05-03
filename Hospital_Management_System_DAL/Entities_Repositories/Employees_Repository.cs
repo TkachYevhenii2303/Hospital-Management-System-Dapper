@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Dapper_Data_Access_Layer.Data_transfer_objects_on_DAL.Response_Result_DTO;
 using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Entities_Repositories.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
@@ -22,29 +23,31 @@ namespace Dapper_Data_Access_Layer.Entities_Repositories
             transactions = transaction;
         }
 
-        public async Task<IEnumerable<String>> Get_all_Departments_titles_ID(Guid ID)
+        public List<string> Get_Departments_title_ID(Guid ID)
         {
-            string Response = "Select Department.Department_title From Employees " +
-                "Inner join In_Departments on Employees.ID = In_Departments.Employees_ID " +
-                "Inner join Department on Department.Id = In_Departments.Departments_ID " +
-                "Where Employees.ID = @ID";
+            string Response = "SELECT DISTINCT d.Department_title " +
+                "FROM Employees e " +
+                "INNER JOIN In_Departments id ON e.ID = id.Employees_ID " +
+                "INNER JOIN Department d ON d.Id = id.Departments_ID " +
+                "WHERE e.ID = @ID;";
 
-            var Result = await connections.QueryAsync<String>(Response, 
-                param: new { ID = ID }, 
+            var Result = connections.Query<string>(Response,
+                param: new { ID = ID },
                 transaction: transactions);
 
-            return Result;
+            return Result.ToList();
         }
 
-        public async Task<Result_Response<IEnumerable<Employees>>> Get_Employees_and_Departments(Guid ID)
+        public async Task<Result_Response<Employees>> Get_Employees_and_Departments(Guid ID)
         {
-            var Result_Response = new Result_Response<IEnumerable<Employees>>();
-            var procedures = "Employees_and_Departments";
+            var Result_Response = new Result_Response<Employees>();
+            var procedures = "Employees_and_Departments_Server";
             var parameters = new DynamicParameters();
 
             parameters.Add("ID", ID, DbType.Guid, ParameterDirection.Input);
-
-            Result_Response.Result = await SqlMapper.QueryAsync<Employees>(connections, procedures, parameters, transactions, commandType: CommandType.StoredProcedure);
+          
+            Result_Response.Result = await connections.QueryFirstOrDefaultAsync<Employees>
+                (procedures, parameters, transaction: transactions, commandType: CommandType.StoredProcedure);
 
             Result_Response.Message = "Stored Procedure Employees_and_Departments is Completed!!! Everything is good!";
 

@@ -1,4 +1,5 @@
-﻿using Dapper_Data_Access_Layer.Entities;
+﻿using Dapper_Data_Access_Layer.Data_transfer_objects_on_DAL.Response_Result_DTO;
+using Dapper_Data_Access_Layer.Entities;
 using Dapper_Example_Bussines_Logic.Data_trasfer_objects.Request_Result_DTO;
 using Dapper_Example_Bussines_Logic.Data_trasfer_objects.Response_Result_DTO;
 using System;
@@ -21,8 +22,8 @@ namespace Dapper_Example_Bussines_Logic.Data_trasfer_objects.Services.Interfaces
 
         public Task<Result_Response<IEnumerable<Employees_Response_DTO>>> Delete_Employee(Guid ID);
 
-        public Task<Result_Response<IEnumerable<Employees_Departments_Result_DTO>>> Get_Employees_and_Departments_ID(Guid ID);
+        public Task<Result_Response<Employees_Departments_Result_DTO>> Get_Employees_and_Departments_ID(Guid ID);
 
-        public Task<IEnumerable<String>> Get_all_Departments_titles_ID(Guid ID);
+        public List<string> Get_all_Departments_titles_ID(Guid ID);
     }
 }

@@ -1,5 +1,6 @@
 using System.Data;
 using System.Reflection;
+using AutoMapper;
 using Dapper_Data_Access_Layer.Entities_Repositories;
 using Dapper_Data_Access_Layer.Entities_Repositories.Interfaces;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern;
@@ -13,8 +14,6 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add AutoMapper for working with Data-transfer-objects
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -53,6 +52,12 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddScoped<IUnit_of_Work, Unit_of_Work>();
 
 builder.Services.AddScoped<IEmployees_Services, Employees_Services>();
+
+// Add AutoMapper for working with Data-transfer-objects
+builder.Services.AddScoped(options => new MapperConfiguration(configurations =>
+{
+    configurations.AddProfile(new AutoMapping(options.GetService<IUnit_of_Work>()));
+}).CreateMapper());
 
 var app = builder.Build();
 

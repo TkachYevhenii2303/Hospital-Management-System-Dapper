@@ -1,4 +1,5 @@
-﻿using Dapper_Data_Access_Layer.Entities;
+﻿using Dapper_Data_Access_Layer.Data_transfer_objects_on_DAL.Response_Result_DTO;
+using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Dapper_Example_Bussines_Logic.Data_trasfer_objects.Request_Result_DTO;
 using Dapper_Example_Bussines_Logic.Data_trasfer_objects.Response_Result_DTO;
@@ -164,7 +165,7 @@ namespace Hospital_Management_System_API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<Result_Response<IEnumerable<Employees_Departments_Result_DTO>>>> Get_Employees_and_Departments_ID(Guid ID)
+        public async Task<ActionResult<Result_Response<Employees>>> Get_Employees_and_Departments_ID(Guid ID)
         {
             try
             {
@@ -187,13 +188,18 @@ namespace Hospital_Management_System_API.Controllers
             }
         }
 
+        /// <summary>
+        /// Fetching the Departments titles by ID for the Employee
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         [HttpGet, Route("Get_Departments_titles_ID/{ID}")]
-        public async Task<ActionResult<IEnumerable<String>>> Get_Departments_titles_ID(Guid ID)
+        public async Task<ActionResult<List<string>>> Get_Departments_titles_ID(Guid ID)
         {
             try
             {
                 _logger.LogInformation($"Fetching the Get_Employees_and_Departments_ID with {ID} ID...");
-                var result = await _Employees_Services.Get_all_Departments_titles_ID(ID);
+                var result = _Employees_Services.Get_all_Departments_titles_ID(ID);
 
                 if (result is null)
                 {

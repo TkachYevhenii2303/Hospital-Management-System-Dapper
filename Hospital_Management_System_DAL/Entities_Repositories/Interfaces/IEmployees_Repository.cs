@@ -1,4 +1,5 @@
-﻿using Dapper_Data_Access_Layer.Entities;
+﻿using Dapper_Data_Access_Layer.Data_transfer_objects_on_DAL.Response_Result_DTO;
+using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace Dapper_Data_Access_Layer.Entities_Repositories.Interfaces
 {
     public interface IEmployees_Repository : IGenericRepository<Employees>
     {
-        public Task<Result_Response<IEnumerable<Employees>>> Get_Employees_and_Departments(Guid ID);
+        public Task<Result_Response<Employees>> Get_Employees_and_Departments(Guid ID);
 
-        public Task<IEnumerable<string>> Get_all_Departments_titles_ID(Guid ID);
+        public List<string> Get_Departments_title_ID(Guid ID);
     }
 }

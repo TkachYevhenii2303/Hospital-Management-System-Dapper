@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Dapper_Data_Access_Layer.Data_transfer_objects_on_DAL.Response_Result_DTO;
 using Dapper_Data_Access_Layer.Entities;
 using Dapper_Data_Access_Layer.Repository.RepositoryPattern.Interfaces;
 using Dapper_Example_Bussines_Logic.Data_trasfer_objects.Request_Result_DTO;
@@ -66,16 +67,16 @@ namespace Dapper_Example_Bussines_Logic.Data_trasfer_objects.Services
             return _mapper.Map<Result_Response<IEnumerable<Employees>>, Result_Response<IEnumerable<Employees_Response_DTO>>>(result);
         }
 
-        public async Task<Result_Response<IEnumerable<Employees_Departments_Result_DTO>>> Get_Employees_and_Departments_ID(Guid ID)
+        public async Task<Result_Response<Employees_Departments_Result_DTO>> Get_Employees_and_Departments_ID(Guid ID)
         {
             var result = await _Unit_of_Work.Employees_Repository.Get_Employees_and_Departments(ID);
 
-            return _mapper.Map<Result_Response<IEnumerable<Employees>>, Result_Response<IEnumerable<Employees_Departments_Result_DTO>>>(result);
+            return _mapper.Map<Result_Response<Employees>, Result_Response<Employees_Departments_Result_DTO>>(result);
         }
 
-        public async Task<IEnumerable<string>> Get_all_Departments_titles_ID(Guid ID)
+        public List<string> Get_all_Departments_titles_ID(Guid ID)
         {
-            var result = await _Unit_of_Work.Employees_Repository.Get_all_Departments_titles_ID(ID);
+            var result = _Unit_of_Work.Employees_Repository.Get_Departments_title_ID(ID);
 
             return result;
         }
