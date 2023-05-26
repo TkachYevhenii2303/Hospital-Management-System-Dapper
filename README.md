@@ -1,4 +1,4 @@
-## Example-Dapper-API-Migration
+## Hospital Management System API
 ![Database](https://img.shields.io/badge/Database--Server-<COLOR>)
 ![ORM](https://img.shields.io/badge/ORM--Dapper-FAD02C)
 ![ASP](https://img.shields.io/badge/ASP--NET--CORE-738FA7)
@@ -7,13 +7,28 @@
 ![Database Part 2](https://img.shields.io/badge/Patients--Appointment-D01110)
 ![Database Part 3](https://img.shields.io/badge/Documents-D01110)
 
-Creating the base ASP.NET Core API and Migration to Entity Framework, also I use the such ORM as Dapper and Sql-Server like main tool for create databases
+The Hospital Management System API is a powerful and efficient tool built on the ADO.NET framework using Dapper. It provides developers with seamless integration and access to hospital management functionalities, enabling the development of robust healthcare applications and systems. With this API, healthcare professionals can manage patient information, appointments, medical records, and more.
 
-Firstly, I created the database for the API. It was database [Employees and Shedule + Department and Clinic + Patients and Documents]
+## Features
+1. Patient Management: Retrieve, create, update, and delete patient information, including personal details, medical history, allergies, and contact information. Maintain a centralized database of patient records for easy access and management.
 
+2. Appointment Scheduling: Enable healthcare providers to schedule and manage patient appointments. Allow patients to request appointments and receive confirmation notifications. Implement features for appointment rescheduling and cancellations.
 
+3. Medical Records: Capture and store patient medical records, including diagnoses, treatments, medications, and lab results. Enable healthcare professionals to view and update medical records securely.
+
+4. Billing and Invoicing: Generate and manage patient bills and invoices. Track payment status and provide features for payment processing, such as online payment integration or generating payment receipts.
+
+5. Staff Management: Manage staff information, including doctors, nurses, and administrative personnel. Maintain records of staff qualifications, work schedules, and contact details.
+
+6. Inventory Management: Track medical equipment, supplies, and medications in the hospital inventory. Implement functionalities for inventory monitoring, restocking, and generating inventory reports.
+
+7. Security and Access Control: Implement user authentication and authorization mechanisms to ensure secure access to API endpoints. Assign appropriate roles and permissions to users based on their responsibilities within the hospital system.
+
+## Support
+If you encounter any issues or have questions regarding the Hospital Management System API, please reach out to our support team at [email](tkach.yevhenii23@gmail.com). We are here to assist you and provide timely solutions to any problems you may face.
+
+## Database
 ![image](https://www.linkpicture.com/q/Hospital-Dapper-Database.png)
-
 
 >### Clinic and Department
 
